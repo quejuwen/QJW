@@ -44,8 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CookieHelper.cs" />
     <Compile Include="Easp.cs" />
+    <Compile Include="IdentityGenerator.cs" />
+    <Compile Include="IpHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="URLHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
