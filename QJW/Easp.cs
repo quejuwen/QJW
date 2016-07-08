@@ -109,7 +109,12 @@ namespace QJW
             HttpContext.Current.Response.End();
         }
 
+        public static void RR(string str)
+        {
+            HttpContext.Current.Response.Redirect(str);
+            HttpContext.Current.Response.End();
 
+        }
 
 
 
