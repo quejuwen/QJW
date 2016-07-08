@@ -13,8 +13,46 @@ namespace QJW
     {
 
         #region 通用工具方法
+        /// <summary>
+        /// 生成二维码，返回二维码的相对路径
+        /// </summary>
+        /// <param name="url">二维码url</param>
+        /// <returns>二维码图片相对路径</returns>
+        public static string GetQRCode(string url)
+        {
+            return GetQRCode(url, 3);
 
+        }
+        /// <summary>
+        /// 生成二维码，返回二维码的相对路径
+        /// </summary>
+        /// <param name="url">二维码url</param>
+        /// <param name="version">二维码版本号</param>
+        /// <returns>二维码图片相对路径</returns>
+        public static string GetQRCode(string url, int version)
+        {
+            return GetQRCode(url, version, string.Empty);
+        }
+        /// <summary>
+        /// 生成二维码，返回二维码的相对路径
+        /// </summary>
+        /// <param name="url">二维码url</param>
+        /// <param name="version">二维码版本号</param>
+        /// <param name="path">相对路径：/upload/20160708/123456789.jpg</param>
+        /// <returns>二维码图片相对路径</returns>
+        public static string GetQRCode(string url, int version, string path)
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                path = "/upload/" + DateTime.Now.ToString("yyyyMMdd") + "/" + MD5(url, 16) + ".JPG";
+            }
+            string physicpath = System.Web.HttpContext.Current.Server.MapPath(path);
+            string filePath = Path.GetDirectoryName(physicpath);
+            Directory.CreateDirectory(filePath);
 
+            QrCodeHelper.GCode(url, version).Save(physicpath, System.Drawing.Imaging.ImageFormat.Jpeg);
+            return path;
+        }
 
         #endregion
 
@@ -332,7 +370,10 @@ namespace QJW
 
 
         #region 字符串加密
-
+        public static string EncryptString(string plaintext)
+        {
+            return EncryptString(plaintext, "QQ" + DateTime.Now.ToString("MMddHH"));
+        }
         /// <summary>   
         /// 利用DES加密算法加密字符串（可解密）   
         /// </summary>   
@@ -363,7 +404,10 @@ namespace QJW
             return ret.ToString();
         }
 
-
+        public static string DecryptString(string plaintext)
+        {
+            return DecryptString(plaintext, "QQ" + DateTime.Now.ToString("MMddHH"));
+        }
         /// <summary>   
         /// 利用DES解密算法解密密文（可解密）   
         /// </summary>   
