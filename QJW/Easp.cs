@@ -108,7 +108,10 @@ namespace QJW
             HttpContext.Current.Response.Write(str);
             HttpContext.Current.Response.End();
         }
-
+        /// <summary>
+        /// 跳转url
+        /// </summary>
+        /// <param name="str"></param>
         public static void RR(string str)
         {
             HttpContext.Current.Response.Redirect(str);
@@ -375,6 +378,11 @@ namespace QJW
 
 
         #region 字符串加密
+        /// <summary>
+        /// DES加密字符串
+        /// </summary>
+        /// <param name="plaintext"></param>
+        /// <returns></returns>
         public static string EncryptString(string plaintext)
         {
             return EncryptString(plaintext, "QQ" + DateTime.Now.ToString("MMddHH"));
@@ -409,6 +417,12 @@ namespace QJW
             return ret.ToString();
         }
 
+
+        /// <summary>
+        /// DES解密字符串
+        /// </summary>
+        /// <param name="plaintext"></param>
+        /// <returns></returns>
         public static string DecryptString(string plaintext)
         {
             return DecryptString(plaintext, "QQ" + DateTime.Now.ToString("MMddHH"));
