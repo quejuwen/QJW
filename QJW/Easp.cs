@@ -60,6 +60,26 @@ namespace QJW
         #region WEB
 
         /// <summary>
+        /// 获取当前网页地址
+        /// </summary>
+        /// <returns></returns>
+        public static string GetUrl()
+        {
+            return HttpContext.Current.Request.Url.AbsoluteUri;
+        }
+
+
+        /// <summary>
+        /// 来路地址
+        /// </summary>
+        /// <returns></returns>
+        public static string GetReferer()
+        {
+            return HttpContext.Current.Request.ServerVariables["HTTP_REFERER"];
+        }
+
+
+        /// <summary>
         /// 提示并返回
         /// </summary>
         /// <param name="message"></param>

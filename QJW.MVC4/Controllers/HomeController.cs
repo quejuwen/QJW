@@ -13,7 +13,10 @@ namespace QJW.MVC4.Controllers
         {
             string msg = string.Empty;
 
-            msg = Easp.GetQRCode("http://www.xiangguhr.com",2);
+            //msg = Easp.GetQRCode("http://www.xiangguhr.com",2);
+
+            msg = Easp.GetReferer();
+
 
             ViewBag.msg = msg;
             return View();
