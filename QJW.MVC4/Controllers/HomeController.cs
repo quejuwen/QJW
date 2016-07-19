@@ -16,7 +16,7 @@ namespace QJW.MVC4.Controllers
             //msg = Easp.GetQRCode("http://www.xiangguhr.com",2);
 
             msg = Easp.GetReferer();
-
+            msg = Easp.GetUrl();
 
             ViewBag.msg = msg;
             return View();
