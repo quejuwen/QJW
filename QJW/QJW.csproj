@@ -58,10 +58,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Microsoft.Web.UI.WebControls.dll</HintPath>
     </Reference>
-    <Reference Include="NPOI, Version=1.2.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\NPOI.dll</HintPath>
-    </Reference>
     <Reference Include="OpenSmtp">
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Lib\OpenSmtp.dll</HintPath>
     </Reference>
@@ -131,7 +127,6 @@
     <Compile Include="Net\IpHelper.cs" />
     <Compile Include="Net\NetHelper.cs" />
     <Compile Include="Net\WebClientHelper.cs" />
-    <Compile Include="NPOI\NPOIHelper.cs" />
     <Compile Include="Page\BindDataControl.cs" />
     <Compile Include="Page\GridViewHelper.cs" />
     <Compile Include="Page\PageBase.cs">
@@ -167,6 +162,9 @@
     <Compile Include="XML\XmlHelper.cs" />
     <Compile Include="XML\XmlHelperExt.cs" />
     <Compile Include="Zip\ZipHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NPOI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
