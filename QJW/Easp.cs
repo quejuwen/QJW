@@ -507,7 +507,7 @@ namespace QJW
         }
 
         //SHA1
-        static public string SHA1(string str_sha1_in)
+        public static string SHA1(string str_sha1_in)
         {
             SHA1 sha1 = new SHA1CryptoServiceProvider();
             byte[] bytes_sha1_in = UTF8Encoding.Default.GetBytes(str_sha1_in);
@@ -516,6 +516,20 @@ namespace QJW
             str_sha1_out = str_sha1_out.Replace("-", "");
             return str_sha1_out;
         }
+
+        /// <summary>
+        /// 获得唯一ID
+        /// </summary>
+        /// <returns></returns>
+        public static string UniqueID()
+        {
+            string password = string.Format("{0}{1}", DateTime.Now.ToString("yyyyMMddHHmmss"), Guid.NewGuid().ToString().Split(new char[] { '-' })[4]);
+            return FormsAuthentication.HashPasswordForStoringInConfigFile(password, "MD5").ToLower();
+        }
+
+
+
+
 
         #endregion
 
