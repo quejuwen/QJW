@@ -13,10 +13,27 @@ namespace QJW.MVC4.Controllers
         {
             string msg = string.Empty;
 
+
+            string url = Request.Url.AbsoluteUri;
+
+            if (Request.QueryString["invitid"]==null)
+            {
+                url = QJW.URLHelper.AddParam(url, "invitid", "18");
+                Easp.RR(url);
+            }
+            if (Easp.Get("invitid")!="18")
+            {
+                url = QJW.URLHelper.UpdateParam(url, "invitid", "18" );
+                Easp.RR(url);
+               
+            }
+
+            msg = url;
+
             //msg = Easp.GetQRCode("http://www.xiangguhr.com",2);
 
-            msg = Easp.GetReferer();
-            msg = Easp.GetUrl();
+            //msg = Easp.GetReferer();
+            //msg = Easp.GetUrl();
 
             ViewBag.msg = msg;
             return View();

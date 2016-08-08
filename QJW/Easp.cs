@@ -86,7 +86,7 @@ namespace QJW
         /// <returns></returns>
         public static void Alert(string message)
         {
-            WE(string.Format(@"<script language=javascript>alert('{0}');history.go(-1);</script>", message));
+            WE(string.Format(@"<script language=javascript>alert('{0}');history.go(-1);</script>", message.Replace("\n","").Replace("\r","")));
         }
 
         /// <summary>
