@@ -324,6 +324,68 @@ namespace QJW
 
         }
 
+
+        /// <summary>
+        /// 返回MDataTable表数据
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="top"></param>
+        /// <param name="where"></param>
+        /// <param name="conn"></param>
+        /// <returns></returns>
+        public static MDataTable ExeMDataTable(string table, string where, string conn = "Conn")
+        {
+            MDataTable mtable = null;
+            using (MAction action = new MAction(table, conn))
+            {
+                mtable = action.Select(where);
+            }
+            return mtable;
+
+        }
+
+
+        /// <summary>
+        /// 返回MDataTable表数据
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="top"></param>
+        /// <param name="where"></param>
+        /// <param name="conn"></param>
+        /// <returns></returns>
+        public static MDataTable ExeMDataTable(string table,int top,string where,string conn="Conn")
+        {
+            MDataTable mtable = null;
+            using (MAction action =new MAction(table,conn))
+            {
+                mtable = action.Select(top, where);
+            }
+            return mtable;
+
+        }
+        /// <summary>
+        /// 返回MDataTable表数据
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="page"></param>
+        /// <param name="pagesize"></param>
+        /// <param name="where"></param>
+        /// <param name="total"></param>
+        /// <param name="conn"></param>
+        /// <returns></returns>
+        public static MDataTable ExeMDataTable(string table,int page, int pagesize, string where, out int total, string conn = "Conn")
+        {
+            MDataTable mtable = null;
+            using (MAction action =new MAction(table,conn))
+            {
+                mtable = action.Select(page, pagesize, where, out total);
+            }
+            return mtable;
+        }
+
+
+
+
         /// <summary>
         /// 创建空行，返回实体，默认值均已赋值
         /// </summary>
