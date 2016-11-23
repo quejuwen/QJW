@@ -48,10 +48,15 @@ namespace QJW
                 path = "/upload/" + DateTime.Now.ToString("yyyyMMdd") + "/" + MD5(url, 16) + ".JPG";
             }
             string physicpath = System.Web.HttpContext.Current.Server.MapPath(path);
-            string filePath = Path.GetDirectoryName(physicpath);
-            Directory.CreateDirectory(filePath);
+            if (!File.Exists(physicpath))
+            {
+                string filePath = Path.GetDirectoryName(physicpath);
+                Directory.CreateDirectory(filePath);
 
-            QrCodeHelper.GCode(url, version).Save(physicpath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                QrCodeHelper.GCode(url, version).Save(physicpath, System.Drawing.Imaging.ImageFormat.Jpeg);
+     
+            }
+
             return path;
         }
 
