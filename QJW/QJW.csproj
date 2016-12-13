@@ -59,6 +59,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Microsoft.Web.UI.WebControls.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NPOI">
       <HintPath>Lib\NPOI\.net 4.0\NPOI.dll</HintPath>
     </Reference>
@@ -126,6 +130,7 @@
     <Compile Include="Image\ImageUpload.cs" />
     <Compile Include="IpHelper.cs" />
     <Compile Include="Json\JsonHelper.cs" />
+    <Compile Include="LoginUser.cs" />
     <Compile Include="Media\MediaHelper.cs" />
     <Compile Include="Message\MessageBoxHelper.cs" />
     <Compile Include="Net\IpHelper.cs" />
@@ -168,7 +173,9 @@
     <Compile Include="XML\XmlHelperExt.cs" />
     <Compile Include="Zip\ZipHelper.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
