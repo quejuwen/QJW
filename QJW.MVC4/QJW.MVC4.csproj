@@ -144,6 +144,14 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\cyqdata\CYQ.Data.csproj">
+      <Project>{1b2fa92c-3892-428c-84ed-4ce1d27a89a8}</Project>
+      <Name>CYQ.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DB.chinacfoclub\DB.chinacfoclub.csproj">
+      <Project>{3130e81e-56e2-4c87-b4a7-061367b2f7a9}</Project>
+      <Name>DB.chinacfoclub</Name>
+    </ProjectReference>
     <ProjectReference Include="..\QJW\QJW.csproj">
       <Project>{648d32e3-7976-49cd-b3d0-82425f9fa9d1}</Project>
       <Name>QJW</Name>

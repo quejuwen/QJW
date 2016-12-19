@@ -1,6 +1,31 @@
-﻿@{
+﻿@using DB.chinacfoclub
+@{
     ViewBag.Title = "Index";
+
+    QJW.Easp.CacheSet("QQQ", "老阙");
 }
 
-<h2>@ViewBag.msg</h2>
+<h2>@ViewBag.msg @QJW.Easp.Cache("QQQ")</h2>
 
+<table border="1">
+    <tr>
+        <td>id</td>
+        <td>标题</td>
+        <td>操作</td>
+    </tr>
+    @foreach (var item in CYQ.Data.Orm.DBFast.Select<KS_Article>("deltf=0"))
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Title</td>
+            <td nowrap><a href="/home/articleDel/@item.ID">删除</a></td>
+        </tr>
+
+    }
+
+
+
+
+
+
+</table>

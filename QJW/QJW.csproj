@@ -34,9 +34,9 @@
     <Reference Include="ChnCharInfo">
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Lib\PinYin\ChnCharInfo.dll</HintPath>
     </Reference>
-    <Reference Include="CYQ.Data, Version=5.6.3.8, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\VS2016\CYQData_V5\CYQ.Data.dll</HintPath>
+    <Reference Include="CYQ.Data, Version=5.7.5.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cyqdata.5.7.5.5\lib\net\CYQ.Data.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Gma.QrCodeNet.Encoding">
       <HintPath>..\..\..\VS2016\CYQData_V5\Gma.QrCodeNet.Encoding.dll</HintPath>
@@ -175,6 +175,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

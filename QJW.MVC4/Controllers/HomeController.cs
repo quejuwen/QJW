@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CYQ.Data;
+using CYQ.Data.Orm;
+using DB.chinacfoclub;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,11 +16,11 @@ namespace QJW.MVC4.Controllers
         {
             string msg = string.Empty;
 
-            string url = "http://m.qpic.cn/psu?/5102ca6c-5cfd-4faa-84f1-793b63927224/3P2qzirX0pJNhPr*Jg2skWULdgropDl*p1BudCg6uME%21/b/YTzDCRyhPwAAYnrbfRgBSAAA&ek=1&kp=1&pt=0&su=0191137777&sce=0-12-12&rf=2-9&wx_lazy=1";
-            string filename = "c:\\1.gif";
+            //string url = "http://m.qpic.cn/psu?/5102ca6c-5cfd-4faa-84f1-793b63927224/3P2qzirX0pJNhPr*Jg2skWULdgropDl*p1BudCg6uME%21/b/YTzDCRyhPwAAYnrbfRgBSAAA&ek=1&kp=1&pt=0&su=0191137777&sce=0-12-12&rf=2-9&wx_lazy=1";
+            //string filename = "c:\\1.gif";
 
-            DownloadFile(url, filename, null);
-            msg = "ok";
+            //DownloadFile(url, filename, null);
+            //msg = "ok";
 
             //string url = Request.Url.AbsoluteUri;
 
@@ -40,13 +43,58 @@ namespace QJW.MVC4.Controllers
             ////msg = Easp.GetReferer();
             ////msg = Easp.GetUrl();
 
+
+
+
+
             ViewBag.msg = msg;
             return View();
         }
 
+        public ActionResult ArticleDel(int id)
+        {
+            //var a = DBFast.Find<KS_Article>(id);
+            //a.DelTF = 1;
+            //DBFast.Update<KS_Article>(a);
+
+            //using (MProc proc = new MProc("update ks_article set deltf=1 where id=" + id))
+            //{
+            //    proc.ExeNonQuery();
+            //}
+
+            //CYQ.Data.Cache.CacheManage.Instance.Clear();
+
+            QJW.Easp.Exec("update ks_article set deltf=1 where id="+id);
+
+            //QJW.Easp.Exec("update ks_article set deltf=1 where id=" + id,"Conn");
+            //using (MAction action =new MAction("KS_Article"))
+            //{
+            //    if (action.Fill(id))
+            //    {
+            //        action.Set("deltf", "1");
+            //        action.Update();
+            //    }
+            //}
+
+            return Redirect("/");
+        }
+
+        public static int Exec(string sql, string conn = "Conn")
+        {
+            using (MProc proc = new MProc(sql, conn))
+            {
+
+                return proc.ExeNonQuery();
+            }
+        }
 
 
 
+        public ActionResult clear()
+        {
+            CYQ.Data.Cache.CacheManage.Instance.Clear();
+            return Redirect("/");
+        }
 
         /// <summary>        
         /// 下载文件        

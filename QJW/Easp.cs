@@ -442,7 +442,7 @@ namespace QJW
         {
             string conn = string.Empty;
             MAction action = new MAction(GetTableName<T>(out conn), conn);
-            action.SetAopOff();
+            //action.SetAopOff();
             return action;
         }
 
