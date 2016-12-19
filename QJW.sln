@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QJW.MVC4", "QJW.MVC4\QJW.MV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB.chinacfoclub", "DB.chinacfoclub\DB.chinacfoclub.csproj", "{3130E81E-56E2-4C87-B4A7-061367B2F7A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CYQ.Data", "..\cyqdata\CYQ.Data.csproj", "{1B2FA92C-3892-428C-84ED-4CE1D27A89A8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{3130E81E-56E2-4C87-B4A7-061367B2F7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3130E81E-56E2-4C87-B4A7-061367B2F7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3130E81E-56E2-4C87-B4A7-061367B2F7A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1B2FA92C-3892-428C-84ED-4CE1D27A89A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1B2FA92C-3892-428C-84ED-4CE1D27A89A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B2FA92C-3892-428C-84ED-4CE1D27A89A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1B2FA92C-3892-428C-84ED-4CE1D27A89A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
