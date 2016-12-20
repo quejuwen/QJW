@@ -163,6 +163,7 @@
     <Compile Include="URLHelper.cs" />
     <Compile Include="Url\UrlHelper.cs" />
     <Compile Include="Validator\ValidatorHelper.cs" />
+    <Compile Include="VerifyCode\ValidateCode.cs" />
     <Compile Include="VerifyCode\VerifyCodeHelper.cs" />
     <Compile Include="VerifyCode\VerifyCodeRand.cs" />
     <Compile Include="Video\VideoHelper.cs">

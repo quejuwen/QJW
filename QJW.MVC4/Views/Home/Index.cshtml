@@ -2,10 +2,13 @@
 @{
     ViewBag.Title = "Index";
 
-    QJW.Easp.CacheSet("QQQ", "老阙");
+
 }
 
-<h2>@ViewBag.msg @QJW.Easp.Cache("QQQ")</h2>
+<h2>@ViewBag.msg 列表</h2>
+<p><img src="/home/CreateValidate" alt="Alternate Text" /></p>
+<p><img src="/home/createimageverify" alt="Alternate Text" /></p>
+<p><img src="/home/CreateImageCode" alt="Alternate Text" /></p>
 
 <table border="1">
     <tr>
@@ -13,7 +16,7 @@
         <td>标题</td>
         <td>操作</td>
     </tr>
-    @foreach (var item in CYQ.Data.Orm.DBFast.Select<KS_Article>("deltf=0"))
+    @foreach (var item in CYQ.Data.Orm.DBFast.Select<KS_Article>(10,"deltf=0"))
     {
         <tr>
             <td>@item.ID</td>
@@ -29,3 +32,4 @@
 
 
 </table>
+<p><img src="/home/getqr?url=http://m.981china.com" alt="Alternate Text" /></p>
