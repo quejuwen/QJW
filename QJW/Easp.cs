@@ -610,6 +610,62 @@ namespace QJW
 
         #endregion
 
+        #region 网络操作
+        /// <summary>
+        /// 下载远程图片到/upload/yyyyMMdd/xxxx.jpg
+        /// </summary>
+        /// <param name="URL">图片url</param>
+        /// <returns>/upload/yyyyMMdd/xxxx.jpg</returns>
+        public static string DownloadImg(string URL)
+        {
 
+            try
+            {
+                System.Net.HttpWebRequest Myrq = (System.Net.HttpWebRequest)System.Net.HttpWebRequest.Create(URL);
+                System.Net.HttpWebResponse myrp = (System.Net.HttpWebResponse)Myrq.GetResponse();
+                string contentType = myrp.ContentType;
+
+
+                long totalBytes = myrp.ContentLength;
+                string fileExt = ".JPG";
+                if (contentType == "image/gif")
+                {
+                    fileExt = ".GIF";
+                }
+                if (contentType == "image/png")
+                {
+                    fileExt = ".PNG";
+                }
+                string vpath = string.Format("/upload/{0}/{1}", DateTime.Now.ToString("yyyyMMdd"), Guid.NewGuid().ToString().Replace("-", "") + fileExt);
+                string spath = System.Web.HttpContext.Current.Server.MapPath(vpath);
+                string path = Path.GetDirectoryName(spath);
+                Directory.CreateDirectory(path);
+
+
+                System.IO.Stream st = myrp.GetResponseStream();
+                System.IO.Stream so = new System.IO.FileStream(spath, System.IO.FileMode.Create);
+                long totalDownloadedByte = 0;
+
+                byte[] by = new byte[1024];
+                int osize = st.Read(by, 0, (int)by.Length);
+                while (osize > 0)
+                {
+                    totalDownloadedByte = osize + totalDownloadedByte;
+                    so.Write(by, 0, osize);
+                    osize = st.Read(by, 0, (int)by.Length);
+                }
+                so.Close();
+                st.Close();
+
+                return vpath;
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+
+        #endregion
     }
 }
