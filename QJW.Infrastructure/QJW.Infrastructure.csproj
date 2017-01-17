@@ -58,6 +58,7 @@
     <Compile Include="Response\IResponse.cs" />
     <Compile Include="Response\ListResponseBase.cs" />
     <Compile Include="Response\PageResponseBase.cs" />
+    <Compile Include="Response\ResponseBase.cs" />
     <Compile Include="ResultObject.cs" />
   </ItemGroup>
   <ItemGroup>
