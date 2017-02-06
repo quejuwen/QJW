@@ -322,7 +322,7 @@ namespace QJW
         /// <returns></returns>
         public static MDataTable ExeMDataTable(string sql, string conn = "Conn")
         {
-            using (MProc proc = new MProc(sql))
+            using (MProc proc = new MProc(sql,conn))
             {
                 return proc.ExeMDataTable();
             }
