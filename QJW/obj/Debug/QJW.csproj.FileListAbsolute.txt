@@ -1,0 +1,6 @@
+F:\VS2017\QJW\QJW\bin\Debug\QJW.dll
+F:\VS2017\QJW\QJW\bin\Debug\QJW.pdb
+F:\VS2017\QJW\QJW\bin\Debug\CYQ.Data.dll
+F:\VS2017\QJW\QJW\bin\Debug\CYQ.Data.xml
+F:\VS2017\QJW\QJW\obj\Debug\QJW.dll
+F:\VS2017\QJW\QJW\obj\Debug\QJW.pdb

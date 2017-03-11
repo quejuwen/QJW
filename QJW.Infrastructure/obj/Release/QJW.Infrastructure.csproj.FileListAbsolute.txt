@@ -1,0 +1,11 @@
+C:\VS2017\QJW\QJW.Infrastructure\bin\Release\QJW.Infrastructure.dll
+C:\VS2017\QJW\QJW.Infrastructure\bin\Release\QJW.Infrastructure.pdb
+C:\VS2017\QJW\QJW.Infrastructure\bin\Release\Loogn.OrmLite.dll
+C:\VS2017\QJW\QJW.Infrastructure\bin\Release\Newtonsoft.Json.dll
+C:\VS2017\QJW\QJW.Infrastructure\bin\Release\QJW.Utils.dll
+C:\VS2017\QJW\QJW.Infrastructure\bin\Release\QJW.Utils.pdb
+C:\VS2017\QJW\QJW.Infrastructure\bin\Release\Loogn.OrmLite.xml
+C:\VS2017\QJW\QJW.Infrastructure\bin\Release\Newtonsoft.Json.xml
+C:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.csprojResolveAssemblyReference.cache
+C:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.dll
+C:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.pdb
