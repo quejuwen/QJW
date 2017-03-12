@@ -673,54 +673,82 @@ namespace QJW
         {
             string html = string.Empty;
             var client = new HttpClient();
-            using (var ctx = client.Create<string>(HttpMethod.Get, url))
+
+            try
             {
-                ctx.Send();
-                if (ctx.IsValid())
+                using (var ctx = client.Create<string>(HttpMethod.Get, url))
                 {
-                    html = ctx.Result;
+                    ctx.Send();
+                    if (ctx.IsValid())
+                    {
+                        html = ctx.Result;
+                    }
                 }
+
             }
+            catch (Exception ex)
+            {
+
+                CYQ.Data.Log.WriteLogToTxt(ex.Message);
+            }
+
 
             return html;
         }
+
+
+
 
         public static IEnumerable<IHtmlElement> GetElements(string html, string css)
         {
             IEnumerable<IHtmlElement> elements = null;
 
-            var parser = new JumonyParser();
-            if (!string.IsNullOrEmpty(html))
+            if (!string.IsNullOrEmpty(html) && !string.IsNullOrEmpty(css))
             {
-                try
+                var parser = new JumonyParser();
+                var document = parser.Parse(html);
+                if (document.Exists(css))
                 {
-                    var document = parser.Parse(html);
                     elements = document.Find(css);
+                }
 
-                }
-                catch (Exception ex)
-                {
-                    CYQ.Data.Log.WriteLogToTxt(ex.Message);
-                }
             }
 
             return elements;
 
         }
 
+        public static IHtmlElement GetElement(string html, string css)
+        {
+            IHtmlElement element = null;
+            if (!string.IsNullOrEmpty(html) && !string.IsNullOrEmpty(css))
+            {
+
+                var parser = new JumonyParser();
+                var document = parser.Parse(html);
+                if (document.Exists(css))
+                {
+                    element = document.FindFirst(css);
+                }
+            }
+
+
+            return element;
+        }
+
         public static IHtmlElement GetElement(IHtmlElement e, string css)
         {
             IHtmlElement re = null;
-            try
+            if (e.Exists(css))
             {
                 re = e.FindFirst(css);
             }
-            catch (Exception ex)
-            {
-                CYQ.Data.Log.WriteLogToTxt(ex.Message);
-            }
             return re;
         }
+
+
+
+
 
         #endregion
     }
