@@ -137,41 +137,6 @@
             </summary>
             <param name="data">需要转换成整数的byte数组</param>
         </member>
-        <member name="T:QJW.CookieHelper">
-            <summary>
-            类说明：CookieHelper
-            联系方式：361983679  
-            更新网站：[url=http://www.sufeinet.com/thread-655-1-1.html]http://www.sufeinet.com/thread-655-1-1.html[/url]
-            </summary>
-        </member>
-        <member name="M:QJW.CookieHelper.ClearCookie(System.String)">
-            <summary>
-            清除指定Cookie
-            </summary>
-            <param name="cookiename">cookiename</param>
-        </member>
-        <member name="M:QJW.CookieHelper.GetCookieValue(System.String)">
-            <summary>
-            获取指定Cookie值
-            </summary>
-            <param name="cookiename">cookiename</param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.CookieHelper.SetCookie(System.String,System.String)">
-            <summary>
-            添加一个Cookie（24小时过期）
-            </summary>
-            <param name="cookiename"></param>
-            <param name="cookievalue"></param>
-        </member>
-        <member name="M:QJW.CookieHelper.SetCookie(System.String,System.String,System.DateTime)">
-            <summary>
-            添加一个Cookie
-            </summary>
-            <param name="cookiename">cookie名</param>
-            <param name="cookievalue">cookie值</param>
-            <param name="expires">过期时间 DateTime</param>
-        </member>
         <member name="T:QJW.Common.CookieHelper">
             <summary>
             Cookie帮助相关类
@@ -229,6 +194,16 @@
         <member name="T:QJW.Common.ChineseCalHelper">
             <summary>
             中国日历
+            </summary>
+        </member>
+        <member name="T:QJW.Common.ChineseCalHelper.SolarHolidayStruct">
+            <summary>
+            阳历
+            </summary>
+        </member>
+        <member name="T:QJW.Common.ChineseCalHelper.LunarHolidayStruct">
+            <summary>
+            农历
             </summary>
         </member>
         <member name="F:QJW.Common.ChineseCalHelper.LunarDateArray">
@@ -453,16 +428,6 @@
         <member name="P:QJW.Common.ChineseCalHelper.GanZhiDateString">
             <summary>
             取当前日期的干支表示法如 甲子年乙丑月丙庚日
-            </summary>
-        </member>
-        <member name="T:QJW.Common.ChineseCalHelper.SolarHolidayStruct">
-            <summary>
-            阳历
-            </summary>
-        </member>
-        <member name="T:QJW.Common.ChineseCalHelper.LunarHolidayStruct">
-            <summary>
-            农历
             </summary>
         </member>
         <member name="T:QJW.Common.TimeHelper">
@@ -782,304 +747,6 @@
             <param name="key">密钥</param>
             <returns>明文</returns>
         </member>
-        <member name="M:QJW.Easp.GetQRCode(System.String)">
-            <summary>
-            生成二维码，返回二维码的相对路径
-            </summary>
-            <param name="url">二维码url</param>
-            <returns>二维码图片相对路径</returns>
-        </member>
-        <member name="M:QJW.Easp.GetQRCode(System.String,System.Int32)">
-            <summary>
-            生成二维码，返回二维码的相对路径
-            </summary>
-            <param name="url">二维码url</param>
-            <param name="version">二维码版本号</param>
-            <returns>二维码图片相对路径</returns>
-        </member>
-        <member name="M:QJW.Easp.GetQRCode(System.String,System.Int32,System.String)">
-            <summary>
-            生成二维码，返回二维码的相对路径
-            </summary>
-            <param name="url">二维码url</param>
-            <param name="version">二维码版本号</param>
-            <param name="path">相对路径：/upload/20160708/123456789.jpg</param>
-            <returns>二维码图片相对路径</returns>
-        </member>
-        <member name="M:QJW.Easp.GetUrl">
-            <summary>
-            获取当前网页地址
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.GetReferer">
-            <summary>
-            来路地址
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.Alert(System.String)">
-            <summary>
-            提示并返回
-            </summary>
-            <param name="message"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.AlertUrl(System.String,System.String)">
-            <summary>
-            提示并跳转
-            </summary>
-            <param name="message"></param>
-            <param name="url"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.W(System.String)">
-            <summary>
-            输出
-            </summary>
-            <param name="str"></param>
-        </member>
-        <member name="M:QJW.Easp.WN(System.String)">
-            <summary>
-            输出并换行
-            </summary>
-            <param name="str"></param>
-        </member>
-        <member name="M:QJW.Easp.WE(System.String)">
-            <summary>
-            输出并结束
-            </summary>
-            <param name="str"></param>
-        </member>
-        <member name="M:QJW.Easp.RR(System.String)">
-            <summary>
-            跳转url
-            </summary>
-            <param name="str"></param>
-        </member>
-        <member name="M:QJW.Easp.Cache(System.String)">
-            <summary>
-            获得缓存名为key的值
-            </summary>
-            <param name="key"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.CacheSet(System.String,System.Object)">
-            <summary>
-            设置缓存值
-            </summary>
-            <param name="key"></param>
-            <param name="value"></param>
-        </member>
-        <member name="M:QJW.Easp.Get(System.String)">
-            <summary>
-            安全获取QueryString值
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.Get(System.String,System.String)">
-            <summary>
-            安全获取QueryString值，如空则返回默认值
-            </summary>
-            <param name="name"></param>
-            <param name="defaultvalue"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.GetInt(System.String)">
-            <summary>
-            安全获取ID值
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.GetInt(System.String,System.Int32)">
-            <summary>
-            安全获取ID值
-            </summary>
-            <param name="name"></param>
-            <param name="defaultvalue"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.Post(System.String)">
-            <summary>
-            安全获取Form值
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.Post(System.String,System.String)">
-            <summary>
-            安全获取Form值
-            </summary>
-            <param name="name"></param>
-            <param name="defaultvalue"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.PostInt(System.String)">
-            <summary>
-            安全获取Form中ID值
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.PostInt(System.String,System.Int32)">
-            <summary>
-            安全获取Form中ID值
-            </summary>
-            <param name="name"></param>
-            <param name="defaultvalue"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.Exec(System.String,System.String)">
-            <summary>
-            运行sql语句
-            </summary>
-            <param name="sql"></param>
-            <param name="conn"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.ExeScalar``1(System.String,System.String)">
-            <summary>
-            运行sql并返回首行首列
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="sql"></param>
-            <param name="conn"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.ExeMDataTable(System.String,System.String)">
-            <summary>
-            返回MDataTable表数据
-            </summary>
-            <param name="sql"></param>
-            <param name="conn"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.ExeMDataTable(System.String,System.String,System.String)">
-            <summary>
-            返回MDataTable表数据
-            </summary>
-            <param name="table"></param>
-            <param name="top"></param>
-            <param name="where"></param>
-            <param name="conn"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.ExeMDataTable(System.String,System.Int32,System.String,System.String)">
-            <summary>
-            返回MDataTable表数据
-            </summary>
-            <param name="table"></param>
-            <param name="top"></param>
-            <param name="where"></param>
-            <param name="conn"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.ExeMDataTable(System.String,System.Int32,System.Int32,System.String,System.Int32@,System.String)">
-            <summary>
-            返回MDataTable表数据
-            </summary>
-            <param name="table"></param>
-            <param name="page"></param>
-            <param name="pagesize"></param>
-            <param name="where"></param>
-            <param name="total"></param>
-            <param name="conn"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.Create``1(System.Object,System.Object)">
-            <summary>
-            创建空行，返回实体，默认值均已赋值
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="key"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.Create``1(System.Object,System.Object,CYQ.Data.InsertOp)">
-            <summary>
-            创建空行，返回实体，默认值均已赋值
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="key"></param>
-            <param name="value"></param>
-            <param name="op"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.GetMAction``1">
-            <summary>
-            获取实体对应的MAction对像
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.GetTableName``1(System.String@)">
-            <summary>
-            获取实体对应的表名
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="conn"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.EncryptString(System.String)">
-            <summary>
-            DES加密字符串
-            </summary>
-            <param name="plaintext"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.EncryptString(System.String,System.String)">
-            <summary>   
-            利用DES加密算法加密字符串（可解密）   
-            </summary>   
-            <param name="plaintext">被加密的字符串</param>   
-            <param name="key">密钥（只支持8个字节的密钥）</param>   
-            <returns>加密后的字符串</returns>   
-        </member>
-        <member name="M:QJW.Easp.DecryptString(System.String)">
-            <summary>
-            DES解密字符串
-            </summary>
-            <param name="plaintext"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.DecryptString(System.String,System.String)">
-            <summary>   
-            利用DES解密算法解密密文（可解密）   
-            </summary>   
-            <param name="ciphertext">被解密的字符串</param>   
-            <param name="key">密钥（只支持8个字节的密钥，同前面的加密密钥相同）</param>   
-            <returns>返回被解密的字符串</returns>   
-        </member>
-        <member name="M:QJW.Easp.MD5(System.String)">
-            <summary>
-            返回MD5字符（32位大写字母），取16位则 Substring(8,16)
-            </summary>
-            <param name="str"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.MD5(System.String,System.Int32)">
-            <summary>
-            返回MD5字符（16位大写字母）
-            </summary>
-            <param name="str"></param>
-            <param name="count"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.UniqueID">
-            <summary>
-            获得唯一ID
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Easp.DownloadImg(System.String)">
-            <summary>
-            下载远程图片到/upload/yyyyMMdd/xxxx.jpg
-            </summary>
-            <param name="URL">图片url</param>
-            <returns>/upload/yyyyMMdd/xxxx.jpg</returns>
-        </member>
         <member name="T:QJW.Common.MailHelper">
             <summary>
             邮件操作类
@@ -1190,6 +857,11 @@
             操作EXCEL导出数据报表的类
             </summary>
         </member>
+        <member name="P:QJW.Common.DataToExcel.TitleColorIndex">
+            <summary>
+            标题背景色
+            </summary>
+        </member>
         <member name="M:QJW.Common.DataToExcel.CreateExcel">
             <summary>
             创建一个Excel示例
@@ -1209,11 +881,6 @@
             <param name="FilePath">生成文件的路径</param>
             <param name="nameList"></param>
             <returns></returns>
-        </member>
-        <member name="P:QJW.Common.DataToExcel.TitleColorIndex">
-            <summary>
-            标题背景色
-            </summary>
         </member>
         <member name="T:QJW.Common.ExcelHelper">
             <summary>
@@ -1905,6 +1572,36 @@
             字节数组
             </summary>
         </member>
+        <member name="P:QJW.Common.FTPClient.RemoteHost">
+            <summary>
+            FTP服务器IP地址
+            </summary>
+        </member>
+        <member name="P:QJW.Common.FTPClient.RemotePort">
+            <summary>
+            FTP服务器端口
+            </summary>
+        </member>
+        <member name="P:QJW.Common.FTPClient.RemotePath">
+            <summary>
+            当前服务器目录
+            </summary>
+        </member>
+        <member name="P:QJW.Common.FTPClient.RemoteUser">
+            <summary>
+            登录用户账号
+            </summary>
+        </member>
+        <member name="P:QJW.Common.FTPClient.RemotePass">
+            <summary>
+            用户登录密码
+            </summary>
+        </member>
+        <member name="P:QJW.Common.FTPClient.Connected">
+            <summary>
+            是否登录
+            </summary>
+        </member>
         <member name="M:QJW.Common.FTPClient.Connect">
             <summary>
             建立连接 
@@ -1913,6 +1610,11 @@
         <member name="M:QJW.Common.FTPClient.DisConnect">
             <summary>
             关闭连接
+            </summary>
+        </member>
+        <member name="T:QJW.Common.FTPClient.TransferType">
+            <summary>
+            传输模式:二进制类型、ASCII类型
             </summary>
         </member>
         <member name="M:QJW.Common.FTPClient.SetTransferType(QJW.Common.FTPClient.TransferType)">
@@ -2048,44 +1750,29 @@
             </summary>
             <param name="strCommand">命令</param>
         </member>
-        <member name="P:QJW.Common.FTPClient.RemoteHost">
-            <summary>
-            FTP服务器IP地址
-            </summary>
-        </member>
-        <member name="P:QJW.Common.FTPClient.RemotePort">
-            <summary>
-            FTP服务器端口
-            </summary>
-        </member>
-        <member name="P:QJW.Common.FTPClient.RemotePath">
-            <summary>
-            当前服务器目录
-            </summary>
-        </member>
-        <member name="P:QJW.Common.FTPClient.RemoteUser">
-            <summary>
-            登录用户账号
-            </summary>
-        </member>
-        <member name="P:QJW.Common.FTPClient.RemotePass">
-            <summary>
-            用户登录密码
-            </summary>
-        </member>
-        <member name="P:QJW.Common.FTPClient.Connected">
-            <summary>
-            是否登录
-            </summary>
-        </member>
-        <member name="T:QJW.Common.FTPClient.TransferType">
-            <summary>
-            传输模式:二进制类型、ASCII类型
-            </summary>
-        </member>
         <member name="T:QJW.Common.FTPHelper">
             <summary>
             Ftp帮助类
+            </summary>
+        </member>
+        <member name="P:QJW.Common.FTPHelper.Ftp">
+            <summary>
+            全局FTP访问变量
+            </summary>
+        </member>
+        <member name="P:QJW.Common.FTPHelper.Server">
+            <summary>
+            Ftp服务器
+            </summary>
+        </member>
+        <member name="P:QJW.Common.FTPHelper.User">
+            <summary>
+            Ftp用户
+            </summary>
+        </member>
+        <member name="P:QJW.Common.FTPHelper.Pass">
+            <summary>
+            Ftp密码
             </summary>
         </member>
         <member name="M:QJW.Common.FTPHelper.GetList(System.String)">
@@ -2166,30 +1853,20 @@
             得到FTP传输对象
              </summary>
         </member>
-        <member name="P:QJW.Common.FTPHelper.Ftp">
-            <summary>
-            全局FTP访问变量
-            </summary>
-        </member>
-        <member name="P:QJW.Common.FTPHelper.Server">
-            <summary>
-            Ftp服务器
-            </summary>
-        </member>
-        <member name="P:QJW.Common.FTPHelper.User">
-            <summary>
-            Ftp用户
-            </summary>
-        </member>
-        <member name="P:QJW.Common.FTPHelper.Pass">
-            <summary>
-            Ftp密码
-            </summary>
-        </member>
         <member name="T:QJW.Common.HtmlHelper">
             <summary>
             Html操作相关类
             </summary>
+        </member>
+        <member name="P:QJW.Common.HtmlHelper.CookieContainer">
+            <summary> 
+            Cookie
+            </summary> 
+        </member>
+        <member name="P:QJW.Common.HtmlHelper.Encoding">
+            <summary> 
+            语言
+            </summary> 
         </member>
         <member name="M:QJW.Common.HtmlHelper.GetHtml(System.String,System.String,System.Boolean,System.Net.CookieContainer)">
             <summary>
@@ -2325,16 +2002,6 @@
             <param name="str">验证内容</param>
             <param name="erroStr">错误提示内容</param>
             <returns>bool</returns>
-        </member>
-        <member name="P:QJW.Common.HtmlHelper.CookieContainer">
-            <summary> 
-            Cookie
-            </summary> 
-        </member>
-        <member name="P:QJW.Common.HtmlHelper.Encoding">
-            <summary> 
-            语言
-            </summary> 
         </member>
         <member name="T:QJW.Common.JavaScriptHelper">
             <summary>
@@ -2515,135 +2182,6 @@
             页面跳转（跳出框架）
             </summary>
             <param name="url"></param>
-        </member>
-        <member name="T:QJW.IdentityGenerator">
-            <summary>
-            简单Id生成器
-            </summary>
-        </member>
-        <member name="F:QJW.IdentityGenerator.ht">
-            <summary>
-            随机数缓存
-            </summary>
-        </member>
-        <member name="F:QJW.IdentityGenerator.lastTimeStampStyleTicks">
-            <summary>
-            时间戳刻度缓存
-            </summary>
-        </member>
-        <member name="F:QJW.IdentityGenerator.lastEndDateTimeTicks">
-            <summary>
-            时间戳缓存（上一次计算ID的系统时间按时间戳刻度取值）
-            </summary>
-        </member>
-        <member name="F:QJW.IdentityGenerator.ig">
-            <summary>
-            IdentityGenerator的静态实例
-            </summary>
-        </member>
-        <member name="M:QJW.IdentityGenerator.GetTimestamp(System.DateTime,System.Int64)">
-            <summary>
-            按照时间戳刻度计算当前时间戳
-            </summary>
-            <param name="startDateTime">起始时间</param>
-            <param name="timestampStyleTicks">时间戳刻度值</param>
-            <returns>long</returns>
-        </member>
-        <member name="F:QJW.IdentityGenerator.random">
-            <summary>
-            静态随机数生成器
-            </summary>
-        </member>
-        <member name="M:QJW.IdentityGenerator.GetRandom(System.Int32)">
-            <summary>
-            获取随机数
-            </summary>
-            <param name="length">随机数长度</param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.IdentityGenerator.GetIdentity">
-            <summary>
-            计算一个Id
-            以2005-1-1 00:00 000为起始时间刻度
-            </summary>
-            <returns>long</returns>
-        </member>
-        <member name="M:QJW.IdentityGenerator.GetIdentity(QJW.TimestampStyle)">
-            <summary>
-            计算一个Id
-            以2005-1-1 00:00 000为起始时间刻度
-            </summary>
-            <param name="timestampStyle">时间戳刻度</param>
-            <returns>long</returns>
-        </member>
-        <member name="M:QJW.IdentityGenerator.GetIdentity(System.Int32)">
-            <summary>
-            计算一个Id
-            </summary>
-            <param name="randomLength">随机数长度</param>
-            <returns>long</returns>
-        </member>
-        <member name="M:QJW.IdentityGenerator.GetIdentity(QJW.TimestampStyle,System.Int32)">
-            <summary>
-            计算一个Id
-            </summary>
-            <param name="timestampStyle">时间戳刻度</param>
-            <param name="randomLength">随机数长度</param>
-            <returns>long</returns>
-        </member>
-        <member name="M:QJW.IdentityGenerator.GetIdentity(System.DateTime,QJW.TimestampStyle,System.Int32)">
-            <summary>
-            计算一个Id
-            </summary>
-            <param name="startDateTime">时间戳的起始时间</param>
-            <param name="timestampStyle">时间戳刻度</param>
-            <param name="randomLength">随机数长度</param>
-            <returns>long</returns>
-        </member>
-        <member name="M:QJW.IdentityGenerator.GetIdentity(System.DateTime,System.Int64,System.Int32)">
-            <summary>
-            计算一个Id
-            </summary>
-            <param name="startDateTime">时间戳的起始时间</param>
-            <param name="timestampStyleTicks">时间戳刻度(毫微秒单位)</param>
-            <param name="randomLength">随机数长度</param>
-            <returns>long</returns>
-        </member>
-        <!-- 对于成员“T:QJW.TimestampStyle”忽略有格式错误的 XML 注释 -->
-        <member name="F:QJW.TimestampStyle.MillSecondTicks">
-            <summary>
-            时间刻度精度取为1毫秒（此项无意义，因为一般PC机系统时钟只能精确到10毫秒）
-            </summary>
-        </member>
-        <member name="F:QJW.TimestampStyle.TenMillSecondTicks">
-            <summary>
-            时间刻度精度取为10毫秒，这是一般PC机系统时钟的最小精度单位
-            </summary>
-        </member>
-        <member name="F:QJW.TimestampStyle.HundredMillSecondTicks">
-            <summary>
-            时间刻度精度取为100毫秒
-            </summary>
-        </member>
-        <member name="F:QJW.TimestampStyle.SecondTicks">
-            <summary>
-            时间刻度精度取为1秒，即1000毫秒
-            </summary>
-        </member>
-        <member name="F:QJW.TimestampStyle.FiveSecondTicks">
-            <summary>
-            时间刻度精度取为5秒
-            </summary>
-        </member>
-        <member name="F:QJW.TimestampStyle.TenSecondTicks">
-            <summary>
-            时间刻度精度取为10秒
-            </summary>
-        </member>
-        <member name="F:QJW.TimestampStyle.MinutesTicks">
-            <summary>
-            时间刻度精度取为1分种（60秒）
-            </summary>
         </member>
         <member name="T:QJW.Common.ImageDown">
             <summary>
@@ -2832,21 +2370,6 @@
             图片上传类
             </summary>
         </member>
-        <member name="M:QJW.Common.ImageUpload.GetExt(System.String)">
-            <summary>
-            获取文件的后缀名 
-            </summary>
-        </member>
-        <member name="M:QJW.Common.ImageUpload.FileName(System.String)">
-            <summary>
-            获取输出文件的文件名
-            </summary>
-        </member>
-        <member name="M:QJW.Common.ImageUpload.IsUpload(System.String)">
-            <summary>
-            检查上传的文件的类型，是否允许上传。
-            </summary>
-        </member>
         <member name="P:QJW.Common.ImageUpload.Error">
             <summary>
             Error返回值
@@ -2975,36 +2498,20 @@
             图片水印模式下的覆盖图片的实际地址
             </summary>
         </member>
-        <member name="M:QJW.IpHelper.GetUserIp">
+        <member name="M:QJW.Common.ImageUpload.GetExt(System.String)">
             <summary>
-            获得用户IP
+            获取文件的后缀名 
             </summary>
         </member>
-        <member name="M:QJW.IpHelper.GetIP">
+        <member name="M:QJW.Common.ImageUpload.FileName(System.String)">
             <summary>
-            获得当前页面客户端的IP
+            获取输出文件的文件名
             </summary>
-            <returns>当前页面客户端的IP</returns>
         </member>
-        <member name="M:QJW.IpHelper.IsIP(System.String)">
+        <member name="M:QJW.Common.ImageUpload.IsUpload(System.String)">
             <summary>
-            是否为ip
+            检查上传的文件的类型，是否允许上传。
             </summary>
-            <param name="ip"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.IpHelper.GetLocalIP">
-            <summary>
-            获取本地机器IP地址
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.IpHelper.IPtoNum(System.String)">
-            <summary> 
-            把IP地址转换为数字格式 
-            </summary> 
-            <param name="strIp">IP地址</param> 
-            <returns>数字</returns> 
         </member>
         <member name="T:QJW.Common.JsonHelper">
             <summary>
@@ -3077,17 +2584,6 @@
             </summary> 
             <param name="dataReader">DataReader对象</param> 
             <returns>Json字符串</returns> 
-        </member>
-        <member name="M:QJW.LoginUser.BuildUser(System.String)">
-            <summary>
-            从cookie读取用户信息
-            </summary>
-            <param name="cookieName"></param>
-        </member>
-        <member name="M:QJW.LoginUser.Logout(System.String)">
-            <summary>
-            退出cookie登录
-            </summary>
         </member>
         <member name="T:QJW.Common.MediaHelper">
             <summary>
@@ -3191,6 +2687,21 @@
             将字符串形式的IP地址转换成IPAddress对象
             </summary>
             <param name="ip">字符串形式的IP地址</param>        
+        </member>
+        <member name="P:QJW.Common.NetHelper.LocalHostName">
+            <summary>
+            获取本机的计算机名
+            </summary>
+        </member>
+        <member name="P:QJW.Common.NetHelper.LANIP">
+            <summary>
+            获取本机的局域网IP
+            </summary>        
+        </member>
+        <member name="P:QJW.Common.NetHelper.WANIP">
+            <summary>
+            获取本机在Internet网络的广域网IP
+            </summary>        
         </member>
         <member name="M:QJW.Common.NetHelper.GetClientIP(System.Net.Sockets.Socket)">
             <summary>
@@ -3352,21 +2863,6 @@
             <param name="msgBody">电子邮件的正文</param>
             <param name="IsEnableSSL">是否开启SSL</param>
         </member>
-        <member name="P:QJW.Common.NetHelper.LocalHostName">
-            <summary>
-            获取本机的计算机名
-            </summary>
-        </member>
-        <member name="P:QJW.Common.NetHelper.LANIP">
-            <summary>
-            获取本机的局域网IP
-            </summary>        
-        </member>
-        <member name="P:QJW.Common.NetHelper.WANIP">
-            <summary>
-            获取本机在Internet网络的广域网IP
-            </summary>        
-        </member>
         <member name="T:QJW.Common.UploadEventArgs">
             <summary>    
             上传数据参数    
@@ -3410,6 +2906,41 @@
         <member name="M:QJW.Common.WebClientHelper.#ctor">
             <summary>    
             创建WebClient的实例    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.BufferSize">
+            <summary>    
+            设置发送和接收的数据缓冲大小    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.ResponseHeaders">
+            <summary>    
+            获取响应头集合    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.RequestHeaders">
+            <summary>    
+            获取请求头集合    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.Proxy">
+            <summary>    
+            获取或设置代理    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.Encoding">
+            <summary>    
+            获取或设置请求与响应的文本编码方式    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.RespHtml">
+            <summary>    
+            获取或设置响应的html代码    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.CookieContainer">
+            <summary>    
+            获取或设置与请求关联的Cookie容器    
             </summary>    
         </member>
         <member name="M:QJW.Common.WebClientHelper.GetHtml(System.String)">
@@ -3488,44 +3019,24 @@
             从磁盘加载Cookie    
             </summary>    
         </member>
-        <member name="P:QJW.Common.WebClientHelper.BufferSize">
-            <summary>    
-            设置发送和接收的数据缓冲大小    
-            </summary>    
-        </member>
-        <member name="P:QJW.Common.WebClientHelper.ResponseHeaders">
-            <summary>    
-            获取响应头集合    
-            </summary>    
-        </member>
-        <member name="P:QJW.Common.WebClientHelper.RequestHeaders">
-            <summary>    
-            获取请求头集合    
-            </summary>    
-        </member>
-        <member name="P:QJW.Common.WebClientHelper.Proxy">
-            <summary>    
-            获取或设置代理    
-            </summary>    
-        </member>
-        <member name="P:QJW.Common.WebClientHelper.Encoding">
-            <summary>    
-            获取或设置请求与响应的文本编码方式    
-            </summary>    
-        </member>
-        <member name="P:QJW.Common.WebClientHelper.RespHtml">
-            <summary>    
-            获取或设置响应的html代码    
-            </summary>    
-        </member>
-        <member name="P:QJW.Common.WebClientHelper.CookieContainer">
-            <summary>    
-            获取或设置与请求关联的Cookie容器    
-            </summary>    
-        </member>
         <member name="T:QJW.Common.MultipartForm">
             <summary>    
             对文件和文本数据进行Multipart形式的编码    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.MultipartForm.FormData">
+            <summary>    
+            获取编码后的字节数组    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.MultipartForm.ContentType">
+            <summary>    
+            获取此编码内容的类型    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.MultipartForm.StringEncoding">
+            <summary>    
+            获取或设置对字符串采用的编码类型    
             </summary>    
         </member>
         <member name="M:QJW.Common.MultipartForm.#ctor">
@@ -3562,21 +3073,6 @@
             </summary>    
             <param name="filename">包含扩展名的文件名</param>    
             <returns>如：application/stream</returns>    
-        </member>
-        <member name="P:QJW.Common.MultipartForm.FormData">
-            <summary>    
-            获取编码后的字节数组    
-            </summary>    
-        </member>
-        <member name="P:QJW.Common.MultipartForm.ContentType">
-            <summary>    
-            获取此编码内容的类型    
-            </summary>    
-        </member>
-        <member name="P:QJW.Common.MultipartForm.StringEncoding">
-            <summary>    
-            获取或设置对字符串采用的编码类型    
-            </summary>    
         </member>
         <member name="T:QJW.Common.NPOIHelper">
             <summary>
@@ -3892,26 +3388,6 @@
             网站路径操作类
             </summary>
         </member>
-        <member name="M:QJW.Common.WebSitePathHelper.GetWebPath(System.String)">
-            <summary>
-            根据给出的相对地址获取网站绝对地址
-            </summary>
-            <param name="localPath">相对地址</param>
-            <returns>绝对地址</returns>
-        </member>
-        <member name="M:QJW.Common.WebSitePathHelper.GetWebPath">
-            <summary>
-             获取网站绝对地址
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.Common.WebSitePathHelper.GetFilePath(System.String)">
-            <summary>
-            根据相对路径或绝对路径获取绝对路径
-            </summary>
-            <param name="localPath">相对路径或绝对路径</param>
-            <returns>绝对路径</returns>
-        </member>
         <member name="T:QJW.Common.WebSitePathHelper.SortType">
             <summary>
             
@@ -3951,6 +3427,26 @@
             <summary>
             
             </summary>
+        </member>
+        <member name="M:QJW.Common.WebSitePathHelper.GetWebPath(System.String)">
+            <summary>
+            根据给出的相对地址获取网站绝对地址
+            </summary>
+            <param name="localPath">相对地址</param>
+            <returns>绝对地址</returns>
+        </member>
+        <member name="M:QJW.Common.WebSitePathHelper.GetWebPath">
+            <summary>
+             获取网站绝对地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.WebSitePathHelper.GetFilePath(System.String)">
+            <summary>
+            根据相对路径或绝对路径获取绝对路径
+            </summary>
+            <param name="localPath">相对路径或绝对路径</param>
+            <returns>绝对路径</returns>
         </member>
         <member name="T:QJW.Common.PDFOperation">
             <summary>
@@ -4073,38 +3569,6 @@
             </summary>
             <param name="str">传入的字符串</param>
             <returns>返回字符串的声音</returns>
-        </member>
-        <member name="M:QJW.QrCodeHelper.GetQrCode(System.String)">
-            <summary>
-            使用Gma.QrCodeNet.Encoding 组件
-            </summary>
-            <param name="content"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.QrCodeHelper.GCode(System.String)">
-            <summary>
-            生成二维码.
-            </summary>
-            <param name="data">需要添加进去的文本</param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.QrCodeHelper.CombinImage(System.Drawing.Image,System.String)">
-            <summary>
-            调用此函数后使此两种图片合并，类似相册，有个
-            背景图，中间贴自己的目标图片
-            </summary>
-            <param name="sourceImg">粘贴的源图片</param>
-            <param name="destImg">粘贴的目标图片</param>
-        </member>
-        <member name="M:QJW.QrCodeHelper.KiResizeImage(System.Drawing.Image,System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Resize图片
-            </summary>
-            <param name="bmp">原始Bitmap</param>
-            <param name="newW">新的宽度</param>
-            <param name="newH">新的高度</param>
-            <param name="Mode">保留着，暂时未用</param>
-            <returns>处理以后的图片</returns>
         </member>
         <member name="T:QJW.Common.RandomHelper">
             <summary>
@@ -4295,26 +3759,6 @@
             注册表基项 HKEY_CURRENT_CONFIG
             </summary>
         </member>
-        <member name="T:QJW.Rmb">
-            <summary> 
-            Rmb 的摘要说明。 
-            </summary> 
-        </member>
-        <member name="M:QJW.Rmb.CmycurD(System.Decimal)">
-            <summary> 
-            转换人民币大小金额 
-            </summary> 
-            <param name="num">金额</param> 
-            <returns>返回大写形式</returns> 
-        </member>
-        <member name="M:QJW.Rmb.CmycurD(System.String)">
-            
-            <summary> 
-            一个重载，将字符串先转换成数字在调用CmycurD(decimal num) 
-            </summary> 
-            <param name="num">用户输入的金额，字符串形式未转成decimal</param> 
-            <returns></returns> 
-        </member>
         <member name="T:QJW.Common.RMBHelper">
             <summary> 
             人民币帮助类 
@@ -4328,7 +3772,6 @@
             <returns>返回大写形式</returns> 
         </member>
         <member name="M:QJW.Common.RMBHelper.CmycurD(System.String)">
-            
             <summary> 
             一个重载，将字符串先转换成数字在调用CmycurD(decimal num) 
             </summary> 
@@ -4761,58 +4204,6 @@
             获取当前应用程序域
             </summary>
         </member>
-        <member name="T:QJW.URLHelper">
-            <summary>
-            URL的操作类
-            </summary>
-        </member>
-        <member name="M:QJW.URLHelper.IsBase64(System.String)">
-            <summary>
-            是否是Base64字符串
-            </summary>
-            <param name="eStr"></param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.URLHelper.UrlEncode(System.String)">
-            <summary>
-            返回 URL 字符串的编码结果
-            </summary>
-            <param name="str">字符串</param>
-            <returns>编码结果</returns>
-        </member>
-        <member name="M:QJW.URLHelper.UrlDecode(System.String)">
-            <summary>
-            返回 URL 字符串的解码结果
-            </summary>
-            <param name="str">字符串</param>
-            <returns>解码结果</returns>
-        </member>
-        <member name="M:QJW.URLHelper.AddParam(System.String,System.String,System.String)">
-            <summary>
-            添加URL参数
-            </summary>
-        </member>
-        <member name="M:QJW.URLHelper.UpdateParam(System.String,System.String,System.String)">
-            <summary>
-            更新URL参数
-            </summary>
-        </member>
-        <member name="M:QJW.URLHelper.ParseUrl(System.String,System.String@,System.Collections.Specialized.NameValueCollection@)">
-            <summary>
-            分析 url 字符串中的参数信息
-            </summary>
-            <param name="url">输入的 URL</param>
-            <param name="baseUrl">输出 URL 的基础部分</param>
-            <param name="nvc">输出分析后得到的 (参数名,参数值) 的集合</param>
-        </member>
-        <member name="M:QJW.URLHelper.autoConvertToURL(System.Object)">
-            <summary> 
-            自动识别文本中的URL 
-            可以识别 www.，http://， ftp://， xx@xx.xx， mms:// 
-            </summary> 
-            <param name="input">输入数据</param> 
-            <returns>自动识别URL后的数据</returns> 
-        </member>
         <member name="T:QJW.Common.UrlHelper">
             <summary>
             URL的操作类
@@ -4969,46 +4360,19 @@
             <param name="str"></param>
             <returns></returns>
         </member>
-        <member name="M:QJW.VerifyCode.ValidateCode.CreateValidateCode(System.Int32)">
-            <summary>
-            生成验证码
-            </summary>
-            <param name="length">指定验证码的长度</param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.VerifyCode.ValidateCode.CreateValidateGraphic(System.String)">
-            <summary>
-            创建验证码的图片
-            </summary>
-            <param name="containsPage">要输出到的page对象</param>
-            <param name="validateNum">验证码</param>
-        </member>
-        <member name="M:QJW.VerifyCode.ValidateCode.GetImageWidth(System.Int32)">
-            <summary>
-            得到验证码图片的长度
-            </summary>
-            <param name="validateNumLength">验证码的长度</param>
-            <returns></returns>
-        </member>
-        <member name="M:QJW.VerifyCode.ValidateCode.GetImageHeight">
-            <summary>
-            得到验证码的高度
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:QJW.VerifyCode.ValidateCode.MaxLength">
-            <summary>
-            验证码的最大长度
-            </summary>
-        </member>
-        <member name="P:QJW.VerifyCode.ValidateCode.MinLength">
-            <summary>
-            验证码的最小长度
-            </summary>
-        </member>
         <member name="T:QJW.Common.VerifyCodeHelper">
             <summary>
             验证图片类
+            </summary>
+        </member>
+        <member name="P:QJW.Common.VerifyCodeHelper.Text">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:QJW.Common.VerifyCodeHelper.Image">
+            <summary>
+            验证码图片
             </summary>
         </member>
         <member name="M:QJW.Common.VerifyCodeHelper.Next(System.Int32)">
@@ -5042,16 +4406,6 @@
             <param name="bXDir">如果扭曲则选择为True</param>
             <param name="nMultValue">波形的幅度倍数，越大扭曲的程度越高,一般为3</param>
             <param name="dPhase">波形的起始相位,取值区间[0-2*PI)</param>
-        </member>
-        <member name="P:QJW.Common.VerifyCodeHelper.Text">
-            <summary>
-            验证码
-            </summary>
-        </member>
-        <member name="P:QJW.Common.VerifyCodeHelper.Image">
-            <summary>
-            验证码图片
-            </summary>
         </member>
         <member name="T:QJW.Common.VerifyCodeRand">
             <summary>
@@ -5529,6 +4883,650 @@
             </summary>
             <param name="FileToZip">要进行压缩的文件名</param>
             <param name="ZipedFile">压缩后生成的压缩文件名</param>
+        </member>
+        <member name="T:QJW.CookieHelper">
+            <summary>
+            类说明：CookieHelper
+            联系方式：361983679  
+            更新网站：[url=http://www.sufeinet.com/thread-655-1-1.html]http://www.sufeinet.com/thread-655-1-1.html[/url]
+            </summary>
+        </member>
+        <member name="M:QJW.CookieHelper.ClearCookie(System.String)">
+            <summary>
+            清除指定Cookie
+            </summary>
+            <param name="cookiename">cookiename</param>
+        </member>
+        <member name="M:QJW.CookieHelper.GetCookieValue(System.String)">
+            <summary>
+            获取指定Cookie值
+            </summary>
+            <param name="cookiename">cookiename</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.CookieHelper.SetCookie(System.String,System.String)">
+            <summary>
+            添加一个Cookie（24小时过期）
+            </summary>
+            <param name="cookiename"></param>
+            <param name="cookievalue"></param>
+        </member>
+        <member name="M:QJW.CookieHelper.SetCookie(System.String,System.String,System.DateTime)">
+            <summary>
+            添加一个Cookie
+            </summary>
+            <param name="cookiename">cookie名</param>
+            <param name="cookievalue">cookie值</param>
+            <param name="expires">过期时间 DateTime</param>
+        </member>
+        <member name="M:QJW.Easp.GetQRCode(System.String)">
+            <summary>
+            生成二维码，返回二维码的相对路径
+            </summary>
+            <param name="url">二维码url</param>
+            <returns>二维码图片相对路径</returns>
+        </member>
+        <member name="M:QJW.Easp.GetQRCode(System.String,System.Int32)">
+            <summary>
+            生成二维码，返回二维码的相对路径
+            </summary>
+            <param name="url">二维码url</param>
+            <param name="version">二维码版本号</param>
+            <returns>二维码图片相对路径</returns>
+        </member>
+        <member name="M:QJW.Easp.GetQRCode(System.String,System.Int32,System.String)">
+            <summary>
+            生成二维码，返回二维码的相对路径
+            </summary>
+            <param name="url">二维码url</param>
+            <param name="version">二维码版本号</param>
+            <param name="path">相对路径：/upload/20160708/123456789.jpg</param>
+            <returns>二维码图片相对路径</returns>
+        </member>
+        <member name="M:QJW.Easp.GetUrl">
+            <summary>
+            获取当前网页地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.GetReferer">
+            <summary>
+            来路地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.Alert(System.String)">
+            <summary>
+            提示并返回
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.AlertUrl(System.String,System.String)">
+            <summary>
+            提示并跳转
+            </summary>
+            <param name="message"></param>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.W(System.String)">
+            <summary>
+            输出
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:QJW.Easp.WN(System.String)">
+            <summary>
+            输出并换行
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:QJW.Easp.WE(System.String)">
+            <summary>
+            输出并结束
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:QJW.Easp.RR(System.String)">
+            <summary>
+            跳转url
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:QJW.Easp.Cache(System.String)">
+            <summary>
+            获得缓存名为key的值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.CacheSet(System.String,System.Object)">
+            <summary>
+            设置缓存值
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:QJW.Easp.Get(System.String)">
+            <summary>
+            安全获取QueryString值
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.Get(System.String,System.String)">
+            <summary>
+            安全获取QueryString值，如空则返回默认值
+            </summary>
+            <param name="name"></param>
+            <param name="defaultvalue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.GetInt(System.String)">
+            <summary>
+            安全获取ID值
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.GetInt(System.String,System.Int32)">
+            <summary>
+            安全获取ID值
+            </summary>
+            <param name="name"></param>
+            <param name="defaultvalue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.Post(System.String)">
+            <summary>
+            安全获取Form值
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.Post(System.String,System.String)">
+            <summary>
+            安全获取Form值
+            </summary>
+            <param name="name"></param>
+            <param name="defaultvalue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.PostInt(System.String)">
+            <summary>
+            安全获取Form中ID值
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.PostInt(System.String,System.Int32)">
+            <summary>
+            安全获取Form中ID值
+            </summary>
+            <param name="name"></param>
+            <param name="defaultvalue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.Exec(System.String,System.String)">
+            <summary>
+            运行sql语句
+            </summary>
+            <param name="sql"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.ExeScalar``1(System.String,System.String)">
+            <summary>
+            运行sql并返回首行首列
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.ExeMDataTable(System.String,System.String)">
+            <summary>
+            返回MDataTable表数据
+            </summary>
+            <param name="sql"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.ExeMDataTable(System.String,System.String,System.String)">
+            <summary>
+            返回MDataTable表数据
+            </summary>
+            <param name="table"></param>
+            <param name="top"></param>
+            <param name="where"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.ExeMDataTable(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            返回MDataTable表数据
+            </summary>
+            <param name="table"></param>
+            <param name="top"></param>
+            <param name="where"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.ExeMDataTable(System.String,System.Int32,System.Int32,System.String,System.Int32@,System.String)">
+            <summary>
+            返回MDataTable表数据
+            </summary>
+            <param name="table"></param>
+            <param name="page"></param>
+            <param name="pagesize"></param>
+            <param name="where"></param>
+            <param name="total"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.Create``1(System.Object,System.Object)">
+            <summary>
+            创建空行，返回实体，默认值均已赋值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.Create``1(System.Object,System.Object,CYQ.Data.InsertOp)">
+            <summary>
+            创建空行，返回实体，默认值均已赋值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="op"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.GetMAction``1">
+            <summary>
+            获取实体对应的MAction对像
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.GetTableName``1(System.String@)">
+            <summary>
+            获取实体对应的表名
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.EncryptString(System.String)">
+            <summary>
+            DES加密字符串
+            </summary>
+            <param name="plaintext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.EncryptString(System.String,System.String)">
+            <summary>   
+            利用DES加密算法加密字符串（可解密）   
+            </summary>   
+            <param name="plaintext">被加密的字符串</param>   
+            <param name="key">密钥（只支持8个字节的密钥）</param>   
+            <returns>加密后的字符串</returns>   
+        </member>
+        <member name="M:QJW.Easp.DecryptString(System.String)">
+            <summary>
+            DES解密字符串
+            </summary>
+            <param name="plaintext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.DecryptString(System.String,System.String)">
+            <summary>   
+            利用DES解密算法解密密文（可解密）   
+            </summary>   
+            <param name="ciphertext">被解密的字符串</param>   
+            <param name="key">密钥（只支持8个字节的密钥，同前面的加密密钥相同）</param>   
+            <returns>返回被解密的字符串</returns>   
+        </member>
+        <member name="M:QJW.Easp.MD5(System.String)">
+            <summary>
+            返回MD5字符（32位大写字母），取16位则 Substring(8,16)
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.MD5(System.String,System.Int32)">
+            <summary>
+            返回MD5字符（16位大写字母）
+            </summary>
+            <param name="str"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.UniqueID">
+            <summary>
+            获得唯一ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.DownloadImg(System.String)">
+            <summary>
+            下载远程图片到/upload/yyyyMMdd/xxxx.jpg
+            </summary>
+            <param name="URL">图片url</param>
+            <returns>/upload/yyyyMMdd/xxxx.jpg</returns>
+        </member>
+        <member name="T:QJW.IdentityGenerator">
+            <summary>
+            简单Id生成器
+            </summary>
+        </member>
+        <member name="F:QJW.IdentityGenerator.ht">
+            <summary>
+            随机数缓存
+            </summary>
+        </member>
+        <member name="F:QJW.IdentityGenerator.lastTimeStampStyleTicks">
+            <summary>
+            时间戳刻度缓存
+            </summary>
+        </member>
+        <member name="F:QJW.IdentityGenerator.lastEndDateTimeTicks">
+            <summary>
+            时间戳缓存（上一次计算ID的系统时间按时间戳刻度取值）
+            </summary>
+        </member>
+        <member name="F:QJW.IdentityGenerator.ig">
+            <summary>
+            IdentityGenerator的静态实例
+            </summary>
+        </member>
+        <member name="M:QJW.IdentityGenerator.GetTimestamp(System.DateTime,System.Int64)">
+            <summary>
+            按照时间戳刻度计算当前时间戳
+            </summary>
+            <param name="startDateTime">起始时间</param>
+            <param name="timestampStyleTicks">时间戳刻度值</param>
+            <returns>long</returns>
+        </member>
+        <member name="F:QJW.IdentityGenerator.random">
+            <summary>
+            静态随机数生成器
+            </summary>
+        </member>
+        <member name="M:QJW.IdentityGenerator.GetRandom(System.Int32)">
+            <summary>
+            获取随机数
+            </summary>
+            <param name="length">随机数长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.IdentityGenerator.GetIdentity">
+            <summary>
+            计算一个Id
+            以2005-1-1 00:00 000为起始时间刻度
+            </summary>
+            <returns>long</returns>
+        </member>
+        <member name="M:QJW.IdentityGenerator.GetIdentity(QJW.TimestampStyle)">
+            <summary>
+            计算一个Id
+            以2005-1-1 00:00 000为起始时间刻度
+            </summary>
+            <param name="timestampStyle">时间戳刻度</param>
+            <returns>long</returns>
+        </member>
+        <member name="M:QJW.IdentityGenerator.GetIdentity(System.Int32)">
+            <summary>
+            计算一个Id
+            </summary>
+            <param name="randomLength">随机数长度</param>
+            <returns>long</returns>
+        </member>
+        <member name="M:QJW.IdentityGenerator.GetIdentity(QJW.TimestampStyle,System.Int32)">
+            <summary>
+            计算一个Id
+            </summary>
+            <param name="timestampStyle">时间戳刻度</param>
+            <param name="randomLength">随机数长度</param>
+            <returns>long</returns>
+        </member>
+        <member name="M:QJW.IdentityGenerator.GetIdentity(System.DateTime,QJW.TimestampStyle,System.Int32)">
+            <summary>
+            计算一个Id
+            </summary>
+            <param name="startDateTime">时间戳的起始时间</param>
+            <param name="timestampStyle">时间戳刻度</param>
+            <param name="randomLength">随机数长度</param>
+            <returns>long</returns>
+        </member>
+        <member name="M:QJW.IdentityGenerator.GetIdentity(System.DateTime,System.Int64,System.Int32)">
+            <summary>
+            计算一个Id
+            </summary>
+            <param name="startDateTime">时间戳的起始时间</param>
+            <param name="timestampStyleTicks">时间戳刻度(毫微秒单位)</param>
+            <param name="randomLength">随机数长度</param>
+            <returns>long</returns>
+        </member>
+        <!-- 对于成员“T:QJW.TimestampStyle”忽略有格式错误的 XML 注释 -->
+        <member name="F:QJW.TimestampStyle.MillSecondTicks">
+            <summary>
+            时间刻度精度取为1毫秒（此项无意义，因为一般PC机系统时钟只能精确到10毫秒）
+            </summary>
+        </member>
+        <member name="F:QJW.TimestampStyle.TenMillSecondTicks">
+            <summary>
+            时间刻度精度取为10毫秒，这是一般PC机系统时钟的最小精度单位
+            </summary>
+        </member>
+        <member name="F:QJW.TimestampStyle.HundredMillSecondTicks">
+            <summary>
+            时间刻度精度取为100毫秒
+            </summary>
+        </member>
+        <member name="F:QJW.TimestampStyle.SecondTicks">
+            <summary>
+            时间刻度精度取为1秒，即1000毫秒
+            </summary>
+        </member>
+        <member name="F:QJW.TimestampStyle.FiveSecondTicks">
+            <summary>
+            时间刻度精度取为5秒
+            </summary>
+        </member>
+        <member name="F:QJW.TimestampStyle.TenSecondTicks">
+            <summary>
+            时间刻度精度取为10秒
+            </summary>
+        </member>
+        <member name="F:QJW.TimestampStyle.MinutesTicks">
+            <summary>
+            时间刻度精度取为1分种（60秒）
+            </summary>
+        </member>
+        <member name="M:QJW.IpHelper.GetUserIp">
+            <summary>
+            获得用户IP
+            </summary>
+        </member>
+        <member name="M:QJW.IpHelper.GetIP">
+            <summary>
+            获得当前页面客户端的IP
+            </summary>
+            <returns>当前页面客户端的IP</returns>
+        </member>
+        <member name="M:QJW.IpHelper.IsIP(System.String)">
+            <summary>
+            是否为ip
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.IpHelper.GetLocalIP">
+            <summary>
+            获取本地机器IP地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.IpHelper.IPtoNum(System.String)">
+            <summary> 
+            把IP地址转换为数字格式 
+            </summary> 
+            <param name="strIp">IP地址</param> 
+            <returns>数字</returns> 
+        </member>
+        <member name="M:QJW.LoginUser.BuildUser(System.String)">
+            <summary>
+            从cookie读取用户信息
+            </summary>
+            <param name="cookieName"></param>
+        </member>
+        <member name="M:QJW.LoginUser.Logout(System.String)">
+            <summary>
+            退出cookie登录
+            </summary>
+        </member>
+        <member name="M:QJW.QrCodeHelper.GetQrCode(System.String)">
+            <summary>
+            使用Gma.QrCodeNet.Encoding 组件
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.QrCodeHelper.GCode(System.String)">
+            <summary>
+            生成二维码.
+            </summary>
+            <param name="data">需要添加进去的文本</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.QrCodeHelper.CombinImage(System.Drawing.Image,System.String)">
+            <summary>
+            调用此函数后使此两种图片合并，类似相册，有个
+            背景图，中间贴自己的目标图片
+            </summary>
+            <param name="sourceImg">粘贴的源图片</param>
+            <param name="destImg">粘贴的目标图片</param>
+        </member>
+        <member name="M:QJW.QrCodeHelper.KiResizeImage(System.Drawing.Image,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Resize图片
+            </summary>
+            <param name="bmp">原始Bitmap</param>
+            <param name="newW">新的宽度</param>
+            <param name="newH">新的高度</param>
+            <param name="Mode">保留着，暂时未用</param>
+            <returns>处理以后的图片</returns>
+        </member>
+        <member name="T:QJW.Rmb">
+            <summary> 
+            Rmb 的摘要说明。 
+            </summary> 
+        </member>
+        <member name="M:QJW.Rmb.CmycurD(System.Decimal)">
+            <summary> 
+            转换人民币大小金额 
+            </summary> 
+            <param name="num">金额</param> 
+            <returns>返回大写形式</returns> 
+        </member>
+        <member name="M:QJW.Rmb.CmycurD(System.String)">
+            <summary> 
+            一个重载，将字符串先转换成数字在调用CmycurD(decimal num) 
+            </summary> 
+            <param name="num">用户输入的金额，字符串形式未转成decimal</param> 
+            <returns></returns> 
+        </member>
+        <member name="T:QJW.URLHelper">
+            <summary>
+            URL的操作类
+            </summary>
+        </member>
+        <member name="M:QJW.URLHelper.IsBase64(System.String)">
+            <summary>
+            是否是Base64字符串
+            </summary>
+            <param name="eStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.URLHelper.UrlEncode(System.String)">
+            <summary>
+            返回 URL 字符串的编码结果
+            </summary>
+            <param name="str">字符串</param>
+            <returns>编码结果</returns>
+        </member>
+        <member name="M:QJW.URLHelper.UrlDecode(System.String)">
+            <summary>
+            返回 URL 字符串的解码结果
+            </summary>
+            <param name="str">字符串</param>
+            <returns>解码结果</returns>
+        </member>
+        <member name="M:QJW.URLHelper.AddParam(System.String,System.String,System.String)">
+            <summary>
+            添加URL参数
+            </summary>
+        </member>
+        <member name="M:QJW.URLHelper.UpdateParam(System.String,System.String,System.String)">
+            <summary>
+            更新URL参数
+            </summary>
+        </member>
+        <member name="M:QJW.URLHelper.ParseUrl(System.String,System.String@,System.Collections.Specialized.NameValueCollection@)">
+            <summary>
+            分析 url 字符串中的参数信息
+            </summary>
+            <param name="url">输入的 URL</param>
+            <param name="baseUrl">输出 URL 的基础部分</param>
+            <param name="nvc">输出分析后得到的 (参数名,参数值) 的集合</param>
+        </member>
+        <member name="M:QJW.URLHelper.autoConvertToURL(System.Object)">
+            <summary> 
+            自动识别文本中的URL 
+            可以识别 www.，http://， ftp://， xx@xx.xx， mms:// 
+            </summary> 
+            <param name="input">输入数据</param> 
+            <returns>自动识别URL后的数据</returns> 
+        </member>
+        <member name="P:QJW.VerifyCode.ValidateCode.MaxLength">
+            <summary>
+            验证码的最大长度
+            </summary>
+        </member>
+        <member name="P:QJW.VerifyCode.ValidateCode.MinLength">
+            <summary>
+            验证码的最小长度
+            </summary>
+        </member>
+        <member name="M:QJW.VerifyCode.ValidateCode.CreateValidateCode(System.Int32)">
+            <summary>
+            生成验证码
+            </summary>
+            <param name="length">指定验证码的长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.VerifyCode.ValidateCode.CreateValidateGraphic(System.String)">
+            <summary>
+            创建验证码的图片
+            </summary>
+            <param name="containsPage">要输出到的page对象</param>
+            <param name="validateNum">验证码</param>
+        </member>
+        <member name="M:QJW.VerifyCode.ValidateCode.GetImageWidth(System.Int32)">
+            <summary>
+            得到验证码图片的长度
+            </summary>
+            <param name="validateNumLength">验证码的长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.VerifyCode.ValidateCode.GetImageHeight">
+            <summary>
+            得到验证码的高度
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

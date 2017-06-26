@@ -50,3 +50,17 @@ C:\VS2017\QJW\QJW\bin\Release\FSLib.Network.xml
 C:\VS2017\QJW\QJW\bin\Release\Ivony.Core.xml
 C:\VS2017\QJW\QJW\bin\Release\Ivony.Html.xml
 C:\VS2017\QJW\QJW\bin\Release\Ivony.Html.Parser.xml
+F:\VS2017\QJW\QJW\bin\Release\FSLib.Extension.dll
+F:\VS2017\QJW\QJW\bin\Release\FSLib.Network.dll
+F:\VS2017\QJW\QJW\bin\Release\Ivony.Core.dll
+F:\VS2017\QJW\QJW\bin\Release\Ivony.Html.dll
+F:\VS2017\QJW\QJW\bin\Release\Ivony.Html.Parser.dll
+F:\VS2017\QJW\QJW\bin\Release\Newtonsoft.Json.dll
+F:\VS2017\QJW\QJW\bin\Release\Ivony.Html.Parser.Regulars.dll
+F:\VS2017\QJW\QJW\bin\Release\FSLib.Extension.xml
+F:\VS2017\QJW\QJW\bin\Release\FSLib.Network.xml
+F:\VS2017\QJW\QJW\bin\Release\Ivony.Core.xml
+F:\VS2017\QJW\QJW\bin\Release\Ivony.Html.xml
+F:\VS2017\QJW\QJW\bin\Release\Ivony.Html.Parser.xml
+F:\VS2017\QJW\QJW\bin\Release\Newtonsoft.Json.xml
+F:\VS2017\QJW\QJW\bin\Release\QJW.dll.config

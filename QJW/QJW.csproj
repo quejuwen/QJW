@@ -37,11 +37,11 @@
     <Reference Include="CYQ.Data">
       <HintPath>..\..\..\VS2016\CYQData_V5\CYQ.Data.dll</HintPath>
     </Reference>
-    <Reference Include="FSLib.Extension">
-      <HintPath>..\..\..\VS2016\CYQData_V5\FSLib.Extension.dll</HintPath>
+    <Reference Include="FSLib.Extension, Version=1.4.2.0, Culture=neutral, PublicKeyToken=61d6a007a0eb6994, processorArchitecture=MSIL">
+      <HintPath>..\packages\extension.fishlee.net.1.4.2.0\lib\net40\FSLib.Extension.dll</HintPath>
     </Reference>
-    <Reference Include="FSLib.Network">
-      <HintPath>..\..\..\VS2016\CYQData_V5\FSLib.Network.dll</HintPath>
+    <Reference Include="FSLib.Network, Version=2.2.0.0, Culture=neutral, PublicKeyToken=eb0741d7f117d5c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\network.fishlee.net.2.2.2.0\lib\net40\FSLib.Network.dll</HintPath>
     </Reference>
     <Reference Include="Gma.QrCodeNet.Encoding">
       <HintPath>..\..\..\VS2016\CYQData_V5\Gma.QrCodeNet.Encoding.dll</HintPath>
@@ -73,9 +73,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Microsoft.Web.UI.WebControls.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NPOI">
       <HintPath>Lib\NPOI\.net 4.0\NPOI.dll</HintPath>
@@ -90,6 +89,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Web" />
@@ -189,6 +189,7 @@
     <Compile Include="Common\Zip\ZipHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

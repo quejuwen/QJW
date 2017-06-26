@@ -9,3 +9,14 @@ C:\VS2017\QJW\QJW.Infrastructure\bin\Release\Newtonsoft.Json.xml
 C:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.csprojResolveAssemblyReference.cache
 C:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.dll
 C:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.pdb
+F:\VS2017\QJW\QJW.Infrastructure\bin\Release\QJW.Infrastructure.dll
+F:\VS2017\QJW\QJW.Infrastructure\bin\Release\QJW.Infrastructure.pdb
+F:\VS2017\QJW\QJW.Infrastructure\bin\Release\Loogn.OrmLite.dll
+F:\VS2017\QJW\QJW.Infrastructure\bin\Release\Newtonsoft.Json.dll
+F:\VS2017\QJW\QJW.Infrastructure\bin\Release\QJW.Utils.dll
+F:\VS2017\QJW\QJW.Infrastructure\bin\Release\QJW.Utils.pdb
+F:\VS2017\QJW\QJW.Infrastructure\bin\Release\Loogn.OrmLite.xml
+F:\VS2017\QJW\QJW.Infrastructure\bin\Release\Newtonsoft.Json.xml
+F:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.csprojResolveAssemblyReference.cache
+F:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.dll
+F:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.pdb

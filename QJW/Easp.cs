@@ -688,7 +688,7 @@ namespace QJW
             }
             catch (Exception ex)
             {
-
+                html = ex.Message;
                 CYQ.Data.Log.WriteLogToTxt(ex.Message);
             }
 

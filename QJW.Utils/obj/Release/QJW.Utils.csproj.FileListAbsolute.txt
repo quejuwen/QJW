@@ -2,3 +2,7 @@ C:\VS2017\QJW\QJW.Utils\bin\Release\QJW.Utils.dll
 C:\VS2017\QJW\QJW.Utils\bin\Release\QJW.Utils.pdb
 C:\VS2017\QJW\QJW.Utils\obj\Release\QJW.Utils.dll
 C:\VS2017\QJW\QJW.Utils\obj\Release\QJW.Utils.pdb
+F:\VS2017\QJW\QJW.Utils\bin\Release\QJW.Utils.dll
+F:\VS2017\QJW\QJW.Utils\bin\Release\QJW.Utils.pdb
+F:\VS2017\QJW\QJW.Utils\obj\Release\QJW.Utils.dll
+F:\VS2017\QJW\QJW.Utils\obj\Release\QJW.Utils.pdb
