@@ -68,7 +68,10 @@ namespace QJW
 
 
         #region WEB
-
+        /// <summary>
+        /// 是否是移动端访问
+        /// </summary>
+        /// <returns></returns>
         public static bool IsMobile()
         {
             var current = System.Web.HttpContext.Current;
@@ -202,6 +205,8 @@ namespace QJW
         {
             return System.Web.HttpContext.Current.Request.QueryString[name] == null ? defaultvalue : System.Web.HttpContext.Current.Request.QueryString[name];
         }
+
+
 
 
         /// <summary>
@@ -669,11 +674,15 @@ namespace QJW
             }
         }
 
+        /// <summary>
+        /// 获取远程html源码
+        /// </summary>
+        /// <param name="url">网址</param>
+        /// <returns></returns>
         public static string GetHtml(string url)
         {
             string html = string.Empty;
             var client = new HttpClient();
-
             try
             {
                 using (var ctx = client.Create<string>(HttpMethod.Get, url))
@@ -684,7 +693,6 @@ namespace QJW
                         html = ctx.Result;
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -698,7 +706,12 @@ namespace QJW
 
 
 
-
+        /// <summary>
+        /// 获取html源码中，指定css名的节点集
+        /// </summary>
+        /// <param name="html"></param>
+        /// <param name="css"></param>
+        /// <returns></returns>
         public static IEnumerable<IHtmlElement> GetElements(string html, string css)
         {
             IEnumerable<IHtmlElement> elements = null;
@@ -713,11 +726,15 @@ namespace QJW
                 }
 
             }
-
             return elements;
-
         }
 
+        /// <summary>
+        /// 获取html源码中，指定css名的节点集首个节点
+        /// </summary>
+        /// <param name="html"></param>
+        /// <param name="css"></param>
+        /// <returns></returns>
         public static IHtmlElement GetElement(string html, string css)
         {
             IHtmlElement element = null;
@@ -736,6 +753,12 @@ namespace QJW
             return element;
         }
 
+        /// <summary>
+        /// 查找节点里，指定名为css的节点
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="css"></param>
+        /// <returns></returns>
         public static IHtmlElement GetElement(IHtmlElement e, string css)
         {
             IHtmlElement re = null;
@@ -746,10 +769,133 @@ namespace QJW
             return re;
         }
 
+        /// <summary>
+        /// 获取html源码中，指定css名的节点html内容
+        /// </summary>
+        /// <param name="html"></param>
+        /// <param name="css"></param>
+        /// <returns></returns>
+        public static string GetElementHtml(string html,string css)
+        {
+            string result = string.Empty;
 
+            var e = GetElement(html, css);
+            if (e!=null)
+            {
+                result = e.RawHtml;
+            }
 
+            return result;
+        }
 
 
         #endregion
+
+        #region 执行正则提取出值
+        /**********************************
+         * 函数名称:GetRegValue
+         * 功能说明:执行正则提取出值
+         * 参    数:HtmlCode:html源代码
+         * 调用示例:
+         *          GetRemoteObj o = new GetRemoteObj();
+         *          string Url = @"http://www.baidu.com/";
+         *          strion HtmlCode = o.GetRemoteHtmlCode(Url);
+         *          string s = o.ReplaceEnter(HtmlCode);
+         *          string Reg="<title>.+?</title>";
+         *          string GetValue=o.GetRegValue(Reg,HtmlCode)
+         *          Response.Write(GetValue);
+         *          o.Dispose();
+         * ********************************/
+        /// <summary>
+        /// 执行正则提取出值
+        /// </summary>
+        /// <param name="RegexString">正则表达式</param>
+        /// <param name="RemoteStr">HtmlCode源代码</param>
+        /// <returns></returns>
+        public static string GetRegValue(string RegexString, string RemoteStr)
+        {
+            string MatchVale = "";
+            Regex r = new Regex(RegexString);
+            Match m = r.Match(RemoteStr);
+            if (m.Success)
+            {
+                MatchVale = m.Value;
+            }
+            return MatchVale;
+        }
+        #endregion
+
+
+        #region 替换通过正则获取字符串所带的正则首尾匹配字符串
+        /**********************************
+         * 函数名称:GetHref
+         * 功能说明:匹配页面的链接
+         * 参    数:HtmlCode:html源代码
+         * 调用示例:
+         *          GetRemoteObj o = new GetRemoteObj();
+         *          string Url = @"http://www.baidu.com/";
+         *          strion HtmlCode = o.GetRemoteHtmlCode(Url);
+         *          string s = o.RegReplace(HtmlCode,"<title>","</title>");
+         *          Response.Write(s);
+         *          o.Dispose();
+         * ********************************/
+        /// <summary>
+        /// 替换通过正则获取字符串所带的正则首尾匹配字符串
+        /// </summary>
+        /// <param name="RegValue">要替换的值</param>
+        /// <param name="regStart">正则匹配的首字符串</param>
+        /// <param name="regEnd">正则匹配的尾字符串</param>
+        /// <returns></returns>
+        public static string RegReplace(string RegValue, string regStart, string regEnd)
+        {
+            string s = RegValue;
+            if (RegValue != "" && RegValue != null)
+            {
+                if (regStart != "" && regStart != null)
+                {
+                    s = s.Replace(regStart, "");
+                }
+                if (regEnd != "" && regEnd != null)
+                {
+                    s = s.Replace(regEnd, "");
+                }
+            }
+            return s;
+        }
+        #endregion
+
+        #region 替换网页中的换行和引号
+        /**********************************
+         * 函数名称:ReplaceEnter
+         * 功能说明:替换网页中的换行和引号
+         * 参    数:HtmlCode:html源代码
+         * 调用示例:
+         *          GetRemoteObj o = new GetRemoteObj();
+         *          string Url = @"http://www.baidu.com/";
+         *          strion HtmlCode = o.GetRemoteHtmlCode(Url);
+         *          string s = o.ReplaceEnter(HtmlCode);
+         *          Response.Write(s);
+         *          o.Dispose();
+         * ********************************/
+        /// <summary>
+        /// 替换网页中的换行和引号
+        /// </summary>
+        /// <param name="HtmlCode">HTML源代码</param>
+        /// <returns></returns>
+        public static string ReplaceEnter(string HtmlCode)
+        {
+            string s = "";
+            if (HtmlCode == null || HtmlCode == "")
+                s = "";
+            else
+                s = HtmlCode.Replace("\"", "");
+            s = s.Replace("\r\n", "");
+            return s;
+        }
+
+        #endregion     
+
+
+
     }
 }
