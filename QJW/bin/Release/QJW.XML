@@ -2339,6 +2339,29 @@
             <param name="pPath">图片路径</param>
             <param name="pSavePath">保存路径</param>
         </member>
+        <member name="M:QJW.Common.ImageHelper.CaptureImage(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            从大图中截取一部分图片
+            </summary>
+            <param name="fromImagePath">来源图片地址</param>        
+            <param name="offsetX">从偏移X坐标位置开始截取</param>
+            <param name="offsetY">从偏移Y坐标位置开始截取</param>
+            <param name="toImagePath">保存图片地址</param>
+            <param name="width">保存图片的宽度</param>
+            <param name="height">保存图片的高度</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.GetPartOfImage(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            get a certain rectangle part of a known graphic
+            </summary>
+            <param name="bitmapPathAndName">path and name of the source graphic</param>
+            <param name="width">width of the part graphic</param>
+            <param name="height">height of the part graphic</param>
+            <param name="offsetX">the width offset in the source graphic</param>
+            <param name="offsetY">the height offset in the source graphic</param>
+            <returns>wanted graphic</returns>
+        </member>
         <member name="T:QJW.Common.FileExtension">
             <summary>
             文件类型
@@ -5268,6 +5291,22 @@
             </summary>
             <param name="RegexString">正则表达式</param>
             <param name="RemoteStr">HtmlCode源代码</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.RegReplace(System.String,System.String,System.String)">
+            <summary>
+            替换通过正则获取字符串所带的正则首尾匹配字符串
+            </summary>
+            <param name="RegValue">要替换的值</param>
+            <param name="regStart">正则匹配的首字符串</param>
+            <param name="regEnd">正则匹配的尾字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.ReplaceEnter(System.String)">
+            <summary>
+            替换网页中的换行和引号
+            </summary>
+            <param name="HtmlCode">HTML源代码</param>
             <returns></returns>
         </member>
         <member name="T:QJW.IdentityGenerator">

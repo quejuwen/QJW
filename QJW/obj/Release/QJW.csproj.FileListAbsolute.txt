@@ -17,7 +17,6 @@ F:\VS2017\QJW\QJW\bin\Release\NPOI.dll
 F:\VS2017\QJW\QJW\bin\Release\OpenSmtp.dll
 F:\VS2017\QJW\QJW\bin\Release\OWC10Chart.dll
 F:\VS2017\QJW\QJW\bin\Release\NPOI.xml
-F:\VS2017\QJW\QJW\obj\Release\QJW.csprojResolveAssemblyReference.cache
 C:\VS2017\QJW\QJW\bin\Release\QJW.XML
 C:\VS2017\QJW\QJW\bin\Release\QJW.dll
 C:\VS2017\QJW\QJW\bin\Release\QJW.pdb
@@ -64,3 +63,5 @@ F:\VS2017\QJW\QJW\bin\Release\Ivony.Html.xml
 F:\VS2017\QJW\QJW\bin\Release\Ivony.Html.Parser.xml
 F:\VS2017\QJW\QJW\bin\Release\Newtonsoft.Json.xml
 F:\VS2017\QJW\QJW\bin\Release\QJW.dll.config
+F:\VS2017\QJW\QJW\obj\Release\QJW.csproj.CoreCompileInputs.cache
+F:\VS2017\QJW\QJW\obj\Release\QJW.csprojResolveAssemblyReference.cache

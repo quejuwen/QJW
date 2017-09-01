@@ -20,3 +20,4 @@ F:\VS2017\QJW\QJW.Infrastructure\bin\Release\Newtonsoft.Json.xml
 F:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.csprojResolveAssemblyReference.cache
 F:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.dll
 F:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.pdb
+F:\VS2017\QJW\QJW.Infrastructure\obj\Release\QJW.Infrastructure.csproj.CoreCompileInputs.cache
