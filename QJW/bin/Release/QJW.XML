@@ -4942,6 +4942,11 @@
             <param name="cookievalue">cookie值</param>
             <param name="expires">过期时间 DateTime</param>
         </member>
+        <member name="T:QJW.Easp">
+            <summary>
+            常用的方法
+            </summary>
+        </member>
         <member name="M:QJW.Easp.GetQRCode(System.String)">
             <summary>
             生成二维码，返回二维码的相对路径
@@ -4965,6 +4970,15 @@
             <param name="version">二维码版本号</param>
             <param name="path">相对路径：/upload/20160708/123456789.jpg</param>
             <returns>二维码图片相对路径</returns>
+        </member>
+        <member name="M:QJW.Easp.SubString(System.String,System.String,System.String)">
+            <summary>
+            截取字符串中开始和结束字符串中间的字符串
+            </summary>
+            <param name="source">源字符串</param>
+            <param name="startStr">开始字符串</param>
+            <param name="endStr">结束字符串</param>
+            <returns>中间字符串</returns>
         </member>
         <member name="M:QJW.Easp.IsMobile">
             <summary>

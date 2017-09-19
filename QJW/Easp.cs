@@ -14,6 +14,9 @@ using System.Collections.Generic;
 
 namespace QJW
 {
+    /// <summary>
+    /// 常用的方法
+    /// </summary>
     public static class Easp
     {
 
@@ -63,6 +66,22 @@ namespace QJW
 
             return path;
         }
+
+
+        /// <summary>
+        /// 截取字符串中开始和结束字符串中间的字符串
+        /// </summary>
+        /// <param name="source">源字符串</param>
+        /// <param name="startStr">开始字符串</param>
+        /// <param name="endStr">结束字符串</param>
+        /// <returns>中间字符串</returns>
+        public static string SubString(string source, string startStr, string endStr)
+        {
+            Regex rg = new Regex("(?<=(" + startStr + "))[.\\s\\S]*?(?=(" + endStr + "))", RegexOptions.Multiline | RegexOptions.Singleline);
+            return rg.Match(source).Value;
+        }
+
+
 
         #endregion
 
@@ -288,6 +307,8 @@ namespace QJW
 
 
         #endregion
+
+
 
 
         #region 数据库操作

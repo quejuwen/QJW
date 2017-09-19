@@ -64,4 +64,3 @@ F:\VS2017\QJW\QJW\bin\Release\Ivony.Html.Parser.xml
 F:\VS2017\QJW\QJW\bin\Release\Newtonsoft.Json.xml
 F:\VS2017\QJW\QJW\bin\Release\QJW.dll.config
 F:\VS2017\QJW\QJW\obj\Release\QJW.csproj.CoreCompileInputs.cache
-F:\VS2017\QJW\QJW\obj\Release\QJW.csprojResolveAssemblyReference.cache
