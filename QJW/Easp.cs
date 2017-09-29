@@ -703,22 +703,26 @@ namespace QJW
         public static string GetHtml(string url)
         {
             string html = string.Empty;
-            var client = new HttpClient();
-            try
+            if (!string.IsNullOrEmpty(url))
             {
-                using (var ctx = client.Create<string>(HttpMethod.Get, url))
+                var client = new HttpClient();
+                try
                 {
-                    ctx.Send();
-                    if (ctx.IsValid())
+                    using (var ctx = client.Create<string>(HttpMethod.Get, url.Replace("&amp;", "&")))
                     {
-                        html = ctx.Result;
+                        ctx.Send();
+                        if (ctx.IsValid())
+                        {
+                            html = ctx.Result;
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                html = ex.Message;
-                CYQ.Data.Log.WriteLogToTxt(ex.Message);
+                catch (Exception ex)
+                {
+                    html = ex.Message;
+                    CYQ.Data.Log.WriteLogToTxt(ex.Message);
+                }
+
             }
 
 
