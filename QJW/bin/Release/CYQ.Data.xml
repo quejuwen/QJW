@@ -244,6 +244,17 @@
             {talbeName1:'column1,column2',talbeName2:'column1,column2'}
             </summary>
         </member>
+        <member name="P:CYQ.Data.AppConfig.Cache.AutoCacheConn">
+            <summary>
+            CYQ.Data.Cache 自动缓存 - 数据库链接配置
+            在多个不同的应用项目里操作同一个数据库时（又不想使用分布式缓存MemCache或Redis），可以开启此项，达到缓存智能清除的效果。
+            </summary>
+        </member>
+        <member name="P:CYQ.Data.AppConfig.Cache.AutoCacheTaskTime">
+            <summary>
+            当AutoCacheConn开启后，定时扫描数据库的任务时间（毫秒）,默认1000
+            </summary>
+        </member>
         <member name="T:CYQ.Data.AppConfig.Log">
             <summary>
             日志类Log 相关的配置
@@ -901,12 +912,12 @@
         </member>
         <member name="P:CYQ.Data.Aop.AopInfo.DalType">
             <summary>
-            数据类型
+            数据类型(只读)
             </summary>
         </member>
         <member name="P:CYQ.Data.Aop.AopInfo.DataBase">
             <summary>
-            数据库名称
+            数据库名称(只读)
             </summary>
         </member>
         <member name="P:CYQ.Data.Aop.AopInfo.AopPara">
@@ -1042,6 +1053,11 @@
         <member name="F:CYQ.Data.Cache.AutoCache.cacheKeys">
             <summary>
             单机存档： 表的baseKey:key1,key2,key3...
+            </summary>
+        </member>
+        <member name="P:CYQ.Data.Cache.AutoCache.KeyTable.ActionInstance">
+            <summary>
+            使用同一个链接，并且不关闭。
             </summary>
         </member>
         <member name="T:CYQ.Data.Cache.CacheManage">
@@ -2042,6 +2058,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:CYQ.Data.DbBase.WriteError(System.String)">
+            <summary>
+            输出错误（若事务中，回滚事务）
+            </summary>
+            <param name="err"></param>
+        </member>
         <member name="P:CYQ.Data.DbBase.DataBase">
             <summary>
             获得链接的数据库名称
@@ -2091,6 +2113,36 @@
             <summary>
             insert and select top 1 data to fill row
             <para>使用此项：插入数据后,会根据返回ID进行查询后填充数据行。</para>
+            </summary>
+        </member>
+        <member name="T:CYQ.Data.Orm.LengthAttribute">
+            <summary>
+            列长度
+            </summary>
+        </member>
+        <member name="P:CYQ.Data.Orm.LengthAttribute.MaxSize">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:CYQ.Data.Orm.LengthAttribute.Scale">
+            <summary>
+            精度
+            </summary>
+        </member>
+        <member name="T:CYQ.Data.Orm.KeyAttribute">
+            <summary>
+            主键自增是否允许Null
+            </summary>
+        </member>
+        <member name="T:CYQ.Data.Orm.DefaultValueAttribute">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:CYQ.Data.Orm.DescriptionAttribute">
+            <summary>
+            表名或字段描述
             </summary>
         </member>
         <member name="T:CYQ.Data.Orm.DBFast">
@@ -2716,6 +2768,10 @@
             <param name="state">状态[0:未更改；1:已赋值,值相同[可插入]；2:已赋值,值不同[可更新]]</param>
             <param name="op">状态设置选项</param>
         </member>
+        <member name="M:CYQ.Data.Table.MDataRow.SetState(System.Int32,CYQ.Data.Table.BreakOp,System.String)">
+            <param name="columns"><para>批量指定某些列</para></param>
+            <returns></returns>
+        </member>
         <member name="M:CYQ.Data.Table.MDataRow.Clone">
             <summary>
             复制一行
@@ -2728,7 +2784,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:CYQ.Data.Table.MDataRow.CreateFrom(System.Object,System.Type)">
+        <member name="M:CYQ.Data.Table.MDataRow.CreateFrom(System.Object,System.Type,CYQ.Data.Table.BreakOp)">
             <summary>
             从实体、Json、Xml、IEnumerable接口实现的类、MDataRow
             </summary>
@@ -2963,6 +3019,12 @@
             <returns></returns>
         </member>
         <member name="M:CYQ.Data.Table.MDataTable.op_Implicit(CYQ.Data.Table.MDataRow)~CYQ.Data.Table.MDataTable">
+            <summary>
+            将一行数据装载成一个表。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CYQ.Data.Table.MDataTable.op_Implicit(CYQ.Data.Table.MDataRowCollection)~CYQ.Data.Table.MDataTable">
             <summary>
             将一行数据装载成一个表。
             </summary>
@@ -3229,7 +3291,7 @@
             <param name="sdr"></param>
             <returns></returns>
         </member>
-        <member name="M:CYQ.Data.Table.MDataTable.CreateFrom(System.Object)">
+        <member name="M:CYQ.Data.Table.MDataTable.CreateFrom(System.Object,CYQ.Data.Table.BreakOp)">
             <summary>
             从List列表里加载成MDataTable
             </summary>
@@ -3390,6 +3452,11 @@
             </summary>
             <param name="dataStruct"></param>
         </member>
+        <member name="M:CYQ.Data.Table.MDataCell.CheckNewValue">
+            <summary>
+            延时检测值的类型
+            </summary>
+        </member>
         <member name="M:CYQ.Data.Table.MDataCell.FixValue">
             <summary>
             数据类型被切换，重新修正值的类型。
@@ -3408,6 +3475,11 @@
             <param name="convertionType">要转换成哪种类型</param>
             <param name="groupID">数据库类型的组号</param>
             <returns></returns>
+        </member>
+        <member name="M:CYQ.Data.Table.MDataCell.Clear">
+            <summary>
+            将值重置为空
+            </summary>
         </member>
         <member name="M:CYQ.Data.Table.MDataCell.SetDefaultValueToValue">
             <summary>
@@ -3428,6 +3500,11 @@
         <member name="M:CYQ.Data.Table.MDataCell.ToRow">
             <summary>
             转成行
+            </summary>
+        </member>
+        <member name="P:CYQ.Data.Table.MDataCell.StringValue">
+            <summary>
+            字符串值
             </summary>
         </member>
         <member name="P:CYQ.Data.Table.MDataCell.Value">
@@ -3533,6 +3610,17 @@
         <member name="M:CYQ.Data.Table.MCellStruct.Clone">
             <summary>
             克隆一个对象。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CYQ.Data.Table.MCellStruct.Set(System.Object)">
+            <summary>
+            为列的所有行设置值
+            </summary>
+        </member>
+        <member name="M:CYQ.Data.Table.MCellStruct.GetWhereIn">
+            <summary>
+            返回该列的where In 条件 : Name in("aa","bb")
             </summary>
             <returns></returns>
         </member>
@@ -3693,6 +3781,11 @@
             首个唯一键
             </summary>
         </member>
+        <member name="P:CYQ.Data.Table.MDataColumn.Item(System.Int32)">
+            <summary>
+            ReadOnly
+            </summary>
+        </member>
         <member name="T:CYQ.Data.Table.MDataView">
             <summary>
             仅用于Winform的列表绑定。
@@ -3714,6 +3807,31 @@
             </summary>
             <typeparam name="T">转换的目标类型</typeparam>
             <param name="schema">表数据架构</param>
+        </member>
+        <member name="T:CYQ.Data.Table.AlterOp">
+            <summary>
+            列结构修选项
+            </summary>
+        </member>
+        <member name="F:CYQ.Data.Table.AlterOp.None">
+            <summary>
+            默认不修改状态
+            </summary>
+        </member>
+        <member name="F:CYQ.Data.Table.AlterOp.AddOrModify">
+            <summary>
+            添加或修改状态
+            </summary>
+        </member>
+        <member name="F:CYQ.Data.Table.AlterOp.Drop">
+            <summary>
+            删除列状态
+            </summary>
+        </member>
+        <member name="F:CYQ.Data.Table.AlterOp.Rename">
+            <summary>
+            重命名列状态
+            </summary>
         </member>
         <member name="T:CYQ.Data.Table.MDataTableJoin">
             <summary>
@@ -4466,31 +4584,6 @@
             oracle序列名称
             </summary>
         </member>
-        <member name="T:CYQ.Data.Table.AlterOp">
-            <summary>
-            列结构修选项
-            </summary>
-        </member>
-        <member name="F:CYQ.Data.Table.AlterOp.None">
-            <summary>
-            默认不修改状态
-            </summary>
-        </member>
-        <member name="F:CYQ.Data.Table.AlterOp.AddOrModify">
-            <summary>
-            添加或修改状态
-            </summary>
-        </member>
-        <member name="F:CYQ.Data.Table.AlterOp.Drop">
-            <summary>
-            删除列状态
-            </summary>
-        </member>
-        <member name="F:CYQ.Data.Table.AlterOp.Rename">
-            <summary>
-            重命名列状态
-            </summary>
-        </member>
         <member name="T:CYQ.Data.Table.MDataTableBatchAction">
             <summary>
             批量操作。
@@ -5063,6 +5156,11 @@
             映射的表名
             </summary>
         </member>
+        <member name="P:CYQ.Data.Tool.DBTool.ErrorMsg">
+            <summary>
+            获取异常的信息
+            </summary>
+        </member>
         <member name="T:CYQ.Data.Tool.JsonSplit">
             <summary>
             分隔Json字符串为字典集合。
@@ -5142,6 +5240,44 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:CYQ.Data.Tool.ConvertTool">
+            <summary>
+            类型转换（支持json转实体）
+            </summary>
+        </member>
+        <member name="M:CYQ.Data.Tool.ConvertTool.ChangeType(System.Object,System.Type)">
+            <summary>
+            类型转换(精准强大)
+            </summary>
+            <param name="value">值处理</param>
+            <param name="t">类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:CYQ.Data.Tool.ReflectTool">
+            <summary>
+            反射工具（带缓存）
+            </summary>
+        </member>
+        <member name="M:CYQ.Data.Tool.ReflectTool.GetGenericArgumentLength(System.Type@)">
+            <summary>
+            获取泛型参数的长度
+            </summary>
+        </member>
+        <member name="M:CYQ.Data.Tool.ReflectTool.GetGenericArgumentLength(System.Type@,System.Type[]@)">
+            <summary>
+            获取泛型参数的长度（和类型）
+            </summary>
+        </member>
+        <member name="M:CYQ.Data.Tool.ReflectTool.GetPropertys(System.Type)">
+            <summary>
+            获得反射属性（内部有缓存）
+            </summary>
+        </member>
+        <member name="M:CYQ.Data.Tool.ReflectTool.GetSystemType(System.Type@)">
+            <summary>
+            获取系统类型，若是Nullable类型，则转为基础类型。
+             </summary>
+        </member>
         <member name="T:CYQ.Data.Tool.StaticTool">
             <summary>
             静态方法工具类
@@ -5158,6 +5294,11 @@
             </summary>
             <param name="t"></param>
             <returns></returns>
+        </member>
+        <member name="M:CYQ.Data.Tool.StaticTool.GetArgumentLength(System.Type@)">
+            <summary>
+             获取泛型的参数长度（非泛型按默认方法计算）
+            </summary>
         </member>
         <member name="M:CYQ.Data.Tool.StaticTool.GetArgumentLength(System.Type@,System.Type[]@)">
             <summary>
@@ -5184,7 +5325,7 @@
         </member>
         <member name="M:CYQ.Data.Tool.StaticTool.ChangeType(System.Object,System.Type)">
             <summary>
-            类型转换
+            类型转换(精准强大)
             </summary>
             <param name="value">值处理</param>
             <param name="t">类型</param>
@@ -5214,11 +5355,6 @@
             </summary>
             <param name="threadName">线程名称</param>
             <returns></returns>
-        </member>
-        <member name="M:CYQ.Data.Tool.ThreadBreak.ClearSchema">
-            <summary>
-            清除所有的表架构。
-            </summary>
         </member>
         <member name="M:CYQ.Data.Tool.ThreadBreak.AddGlobalThread(System.Threading.ParameterizedThreadStart)">
             <summary>

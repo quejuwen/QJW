@@ -22,6 +22,6 @@ F:\VS2017\QJW\QJW.WebBase\bin\Release\QJW.Utils.pdb
 F:\VS2017\QJW\QJW.WebBase\bin\Release\Newtonsoft.Json.xml
 F:\VS2017\QJW\QJW.WebBase\bin\Release\Loogn.OrmLite.xml
 F:\VS2017\QJW\QJW.WebBase\obj\Release\QJW.WebBase.csprojResolveAssemblyReference.cache
+F:\VS2017\QJW\QJW.WebBase\obj\Release\QJW.WebBase.csproj.CoreCompileInputs.cache
 F:\VS2017\QJW\QJW.WebBase\obj\Release\QJW.WebBase.dll
 F:\VS2017\QJW\QJW.WebBase\obj\Release\QJW.WebBase.pdb
-F:\VS2017\QJW\QJW.WebBase\obj\Release\QJW.WebBase.csproj.CoreCompileInputs.cache

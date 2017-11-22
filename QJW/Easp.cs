@@ -1,6 +1,5 @@
 ﻿using CYQ.Data;
 using CYQ.Data.Table;
-using FSLib.Network.Http;
 using System;
 using System.IO;
 using System.Security.Cryptography;
@@ -8,9 +7,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Security;
-using Ivony.Html;
-using Ivony.Html.Parser;
 using System.Collections.Generic;
+using System.Net;
 
 namespace QJW
 {
@@ -613,7 +611,11 @@ namespace QJW
             return FormsAuthentication.HashPasswordForStoringInConfigFile(str, "MD5").Substring(8, count);
         }
 
-        //SHA1
+        /// <summary>
+        /// 获取SHA1加密后的字符串
+        /// </summary>
+        /// <param name="str_sha1_in"></param>
+        /// <returns></returns>
         public static string SHA1(string str_sha1_in)
         {
             SHA1 sha1 = new SHA1CryptoServiceProvider();
@@ -702,116 +704,10 @@ namespace QJW
         /// <returns></returns>
         public static string GetHtml(string url)
         {
-            string html = string.Empty;
-            if (!string.IsNullOrEmpty(url))
-            {
-                var client = new HttpClient();
-                try
-                {
-                    using (var ctx = client.Create<string>(HttpMethod.Get, url.Replace("&amp;", "&")))
-                    {
-                        ctx.Send();
-                        if (ctx.IsValid())
-                        {
-                            html = ctx.Result;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    html = ex.Message;
-                    CYQ.Data.Log.WriteLogToTxt(ex.Message);
-                }
-
-            }
-
-
-            return html;
+            return Common.HtmlHelper.GetHtml(url, null);
         }
 
 
-
-        /// <summary>
-        /// 获取html源码中，指定css名的节点集
-        /// </summary>
-        /// <param name="html"></param>
-        /// <param name="css"></param>
-        /// <returns></returns>
-        public static IEnumerable<IHtmlElement> GetElements(string html, string css)
-        {
-            IEnumerable<IHtmlElement> elements = null;
-
-            if (!string.IsNullOrEmpty(html) && !string.IsNullOrEmpty(css))
-            {
-                var parser = new JumonyParser();
-                var document = parser.Parse(html);
-                if (document.Exists(css))
-                {
-                    elements = document.Find(css);
-                }
-
-            }
-            return elements;
-        }
-
-        /// <summary>
-        /// 获取html源码中，指定css名的节点集首个节点
-        /// </summary>
-        /// <param name="html"></param>
-        /// <param name="css"></param>
-        /// <returns></returns>
-        public static IHtmlElement GetElement(string html, string css)
-        {
-            IHtmlElement element = null;
-            if (!string.IsNullOrEmpty(html) && !string.IsNullOrEmpty(css))
-            {
-
-                var parser = new JumonyParser();
-                var document = parser.Parse(html);
-                if (document.Exists(css))
-                {
-                    element = document.FindFirst(css);
-                }
-            }
-
-
-            return element;
-        }
-
-        /// <summary>
-        /// 查找节点里，指定名为css的节点
-        /// </summary>
-        /// <param name="e"></param>
-        /// <param name="css"></param>
-        /// <returns></returns>
-        public static IHtmlElement GetElement(IHtmlElement e, string css)
-        {
-            IHtmlElement re = null;
-            if (e.Exists(css))
-            {
-                re = e.FindFirst(css);
-            }
-            return re;
-        }
-
-        /// <summary>
-        /// 获取html源码中，指定css名的节点html内容
-        /// </summary>
-        /// <param name="html"></param>
-        /// <param name="css"></param>
-        /// <returns></returns>
-        public static string GetElementHtml(string html,string css)
-        {
-            string result = string.Empty;
-
-            var e = GetElement(html, css);
-            if (e!=null)
-            {
-                result = e.RawHtml;
-            }
-
-            return result;
-        }
 
 
         #endregion
