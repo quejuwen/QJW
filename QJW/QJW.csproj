@@ -40,9 +40,6 @@
     <Reference Include="CYQ.Data, Version=5.7.8.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\cyqdata.5.7.8.7\lib\net\CYQ.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Gma.QrCodeNet.Encoding">
-      <HintPath>..\..\..\VS2016\CYQData_V5\Gma.QrCodeNet.Encoding.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Lib\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
@@ -53,19 +50,12 @@
     <Reference Include="itextsharp">
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Lib\itextsharp.dll</HintPath>
     </Reference>
-    <Reference Include="LTP.Accounts, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\LTP.Accounts.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.UI.WebControls, Version=1.0.2.226, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Microsoft.Web.UI.WebControls.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI">
-      <HintPath>Lib\NPOI\.net 4.0\NPOI.dll</HintPath>
     </Reference>
     <Reference Include="OpenSmtp">
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Lib\OpenSmtp.dll</HintPath>
@@ -87,9 +77,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="ThoughtWorks.QRCode">
-      <HintPath>..\..\..\VS2016\CYQData_V5\ThoughtWorks.QRCode.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\BarCode\BarCodeHelper.cs" />
@@ -138,22 +125,10 @@
     <Compile Include="Common\Net\IpHelper.cs" />
     <Compile Include="Common\Net\NetHelper.cs" />
     <Compile Include="Common\Net\WebClientHelper.cs" />
-    <Compile Include="Common\NPOI\NPOIHelper.cs" />
-    <Compile Include="Common\Page\BindDataControl.cs" />
-    <Compile Include="Common\Page\GridViewHelper.cs" />
-    <Compile Include="Common\Page\PageBase.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Common\Page\PageHelper.cs" />
-    <Compile Include="Common\Page\PageValidate.cs" />
-    <Compile Include="Common\Page\ValidateImgPage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Common\Path\WebSitePathHelper.cs" />
     <Compile Include="Common\PDF\PDFOperation.cs" />
     <Compile Include="Common\PinYin\PinYinHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QrCodeHelper.cs" />
     <Compile Include="Common\Random\RandomHelper.cs" />
     <Compile Include="Common\Regex\RegexHelper.cs" />
     <Compile Include="Common\Register\RegisterHelper.cs" />
