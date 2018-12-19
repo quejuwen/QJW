@@ -43,7 +43,7 @@ namespace QJW.Common
         /// <param name="cookievalue"></param>
         public static void SetCookie(string cookiename, string cookievalue)
         {
-            SetCookie(cookiename, cookievalue, DateTime.Now.AddDays(1.0));
+            SetCookie(cookiename, cookievalue, DateTime.Now.AddDays(30.0));
         }
         /// <summary>
         /// 添加一个Cookie

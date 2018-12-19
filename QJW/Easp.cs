@@ -300,10 +300,6 @@ namespace QJW
             return result;
         }
 
-
-
-
-
         #endregion
 
 
