@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Security;
 using System.Collections.Generic;
 using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace QJW
 {
@@ -302,7 +304,74 @@ namespace QJW
 
         #endregion
 
+        #region 文件和字节数组
+        /// <summary>
+        /// 读取url到字节数组
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public async static Task<byte[]> GetNetFile(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    return response.Content.ReadAsByteArrayAsync().Result;
+                }
+            }
+            return new byte[0];
+        }
 
+        /// <summary>
+        /// 获取远程url源码
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public async static Task<string> GetNetHtml(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    return response.Content.ReadAsStringAsync().Result;
+                }
+
+            }
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// 利用byte[]数组读取文件
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static byte[] GetLocalFile(string path)
+        {
+
+            FileStream fs = new FileStream(path, FileMode.Open);
+            long size = fs.Length;
+            byte[] bytes = new byte[size];
+            fs.Read(bytes, 0, bytes.Length);
+            fs.Close();
+            return bytes;
+
+        }
+
+        /// <summary>
+        /// 字节数组存入文件
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <param name="path"></param>
+        public static void WriteLocalFile(byte[] bytes, string path)
+        {
+            FileStream fs = new FileStream(path, FileMode.Create);
+            fs.Write(bytes, 0, bytes.Length);
+            fs.Close();
+        }
+
+        #endregion
 
 
         #region 数据库操作

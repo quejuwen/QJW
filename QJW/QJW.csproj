@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QJW</RootNamespace>
     <AssemblyName>QJW</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -37,8 +37,8 @@
     <Reference Include="ChnCharInfo">
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Lib\PinYin\ChnCharInfo.dll</HintPath>
     </Reference>
-    <Reference Include="CYQ.Data, Version=5.7.9.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\cyqdata.5.7.9.1\lib\net\CYQ.Data.dll</HintPath>
+    <Reference Include="CYQ.Data, Version=5.7.9.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cyqdata.5.7.9.2\lib\net\CYQ.Data.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Lib\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -69,6 +69,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />

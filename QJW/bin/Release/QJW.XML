@@ -4778,6 +4778,34 @@
             <param name="defaultvalue"></param>
             <returns></returns>
         </member>
+        <member name="M:QJW.Easp.GetNetFile(System.String)">
+            <summary>
+            读取url到字节数组
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.GetNetHtml(System.String)">
+            <summary>
+            获取远程url源码
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.GetLocalFile(System.String)">
+            <summary>
+            利用byte[]数组读取文件
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.WriteLocalFile(System.Byte[],System.String)">
+            <summary>
+            字节数组存入文件
+            </summary>
+            <param name="bytes"></param>
+            <param name="path"></param>
+        </member>
         <member name="M:QJW.Easp.Exec(System.String,System.String)">
             <summary>
             运行sql语句
