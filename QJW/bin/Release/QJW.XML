@@ -4823,11 +4823,19 @@
             <param name="conn"></param>
             <returns></returns>
         </member>
-        <member name="M:QJW.Easp.ExeMDataTable(System.String,System.String)">
+        <member name="M:QJW.Easp.ProMDataTable(System.String,System.String)">
             <summary>
             返回MDataTable表数据
             </summary>
             <param name="sql"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Easp.ExeMDataTable(System.String,System.String)">
+            <summary>
+            返回表中所有的数据
+            </summary>
+            <param name="table"></param>
             <param name="conn"></param>
             <returns></returns>
         </member>
@@ -4836,7 +4844,6 @@
             返回MDataTable表数据
             </summary>
             <param name="table"></param>
-            <param name="top"></param>
             <param name="where"></param>
             <param name="conn"></param>
             <returns></returns>

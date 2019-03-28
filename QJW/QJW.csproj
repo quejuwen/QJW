@@ -37,8 +37,8 @@
     <Reference Include="ChnCharInfo">
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Lib\PinYin\ChnCharInfo.dll</HintPath>
     </Reference>
-    <Reference Include="CYQ.Data, Version=5.7.9.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\cyqdata.5.7.9.2\lib\net\CYQ.Data.dll</HintPath>
+    <Reference Include="CYQ.Data, Version=5.7.9.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cyqdata.5.7.9.7\lib\net20\CYQ.Data.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\..\VS2016\CYQData_V5\QJW.Common\Lib\ICSharpCode.SharpZipLib.dll</HintPath>

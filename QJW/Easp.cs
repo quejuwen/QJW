@@ -391,7 +391,6 @@ namespace QJW
             }
         }
 
-
         /// <summary>
         /// 运行sql并返回首行首列
         /// </summary>
@@ -413,7 +412,7 @@ namespace QJW
         /// <param name="sql"></param>
         /// <param name="conn"></param>
         /// <returns></returns>
-        public static MDataTable ExeMDataTable(string sql, string conn = "Conn")
+        public static MDataTable ProMDataTable(string sql, string conn="Conn")
         {
             using (MProc proc = new MProc(sql, conn))
             {
@@ -422,16 +421,31 @@ namespace QJW
 
         }
 
+        /// <summary>
+        /// 返回表中所有的数据
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="conn"></param>
+        /// <returns></returns>
+        public static MDataTable ExeMDataTable(string table, string conn="Conn")
+        {
+            MDataTable mtable = null;
+            using (MAction action = new MAction(table, conn))
+            {
+                mtable = action.Select();
+            }
+            return mtable;
+
+        }
 
         /// <summary>
         /// 返回MDataTable表数据
         /// </summary>
         /// <param name="table"></param>
-        /// <param name="top"></param>
         /// <param name="where"></param>
         /// <param name="conn"></param>
         /// <returns></returns>
-        public static MDataTable ExeMDataTable(string table, string where, string conn = "Conn")
+        public static MDataTable ExeMDataTable(string table, string where, string conn)
         {
             MDataTable mtable = null;
             using (MAction action = new MAction(table, conn))
@@ -442,7 +456,6 @@ namespace QJW
 
         }
 
-
         /// <summary>
         /// 返回MDataTable表数据
         /// </summary>
@@ -451,7 +464,7 @@ namespace QJW
         /// <param name="where"></param>
         /// <param name="conn"></param>
         /// <returns></returns>
-        public static MDataTable ExeMDataTable(string table, int top, string where, string conn = "Conn")
+        public static MDataTable ExeMDataTable(string table, int top, string where, string conn="Conn")
         {
             MDataTable mtable = null;
             using (MAction action = new MAction(table, conn))
@@ -461,6 +474,7 @@ namespace QJW
             return mtable;
 
         }
+
         /// <summary>
         /// 返回MDataTable表数据
         /// </summary>
@@ -471,7 +485,7 @@ namespace QJW
         /// <param name="total"></param>
         /// <param name="conn"></param>
         /// <returns></returns>
-        public static MDataTable ExeMDataTable(string table, int page, int pagesize, string where, out int total, string conn = "Conn")
+        public static MDataTable ExeMDataTable(string table, int page, int pagesize, string where, out int total, string conn="Conn")
         {
             MDataTable mtable = null;
             using (MAction action = new MAction(table, conn))
@@ -480,9 +494,6 @@ namespace QJW
             }
             return mtable;
         }
-
-
-
 
         /// <summary>
         /// 创建空行，返回实体，默认值均已赋值
