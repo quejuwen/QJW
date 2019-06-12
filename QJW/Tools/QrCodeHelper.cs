@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using ThoughtWorks.QRCode.Codec;
 
-namespace QJW
+namespace QJW.Tools
 {
     public class QrCodeHelper
     {

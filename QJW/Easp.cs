@@ -85,7 +85,6 @@ namespace QJW
 
         #endregion
 
-
         #region WEB
         /// <summary>
         /// 是否是移动端访问
@@ -373,7 +372,6 @@ namespace QJW
 
         #endregion
 
-
         #region 数据库操作
 
         /// <summary>
@@ -412,7 +410,7 @@ namespace QJW
         /// <param name="sql"></param>
         /// <param name="conn"></param>
         /// <returns></returns>
-        public static MDataTable ProMDataTable(string sql, string conn="Conn")
+        public static MDataTable ProMDataTable(string sql, string conn = "Conn")
         {
             using (MProc proc = new MProc(sql, conn))
             {
@@ -427,7 +425,7 @@ namespace QJW
         /// <param name="table"></param>
         /// <param name="conn"></param>
         /// <returns></returns>
-        public static MDataTable ExeMDataTable(string table, string conn="Conn")
+        public static MDataTable ExeMDataTable(string table, string conn = "Conn")
         {
             MDataTable mtable = null;
             using (MAction action = new MAction(table, conn))
@@ -464,7 +462,7 @@ namespace QJW
         /// <param name="where"></param>
         /// <param name="conn"></param>
         /// <returns></returns>
-        public static MDataTable ExeMDataTable(string table, int top, string where, string conn="Conn")
+        public static MDataTable ExeMDataTable(string table, int top, string where, string conn = "Conn")
         {
             MDataTable mtable = null;
             using (MAction action = new MAction(table, conn))
@@ -485,7 +483,7 @@ namespace QJW
         /// <param name="total"></param>
         /// <param name="conn"></param>
         /// <returns></returns>
-        public static MDataTable ExeMDataTable(string table, int page, int pagesize, string where, out int total, string conn="Conn")
+        public static MDataTable ExeMDataTable(string table, int page, int pagesize, string where, out int total, string conn = "Conn")
         {
             MDataTable mtable = null;
             using (MAction action = new MAction(table, conn))
@@ -575,7 +573,6 @@ namespace QJW
 
 
         #endregion
-
 
         #region 字符串加密
         /// <summary>
@@ -780,7 +777,8 @@ namespace QJW
         /// <returns></returns>
         public static string GetHtml(string url)
         {
-            return Common.HtmlHelper.GetHtml(url, null);
+            HttpClient client = new HttpClient();
+            return client.GetStringAsync(url).Result;
         }
 
 
@@ -821,7 +819,6 @@ namespace QJW
             return MatchVale;
         }
         #endregion
-
 
         #region 替换通过正则获取字符串所带的正则首尾匹配字符串
         /**********************************

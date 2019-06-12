@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Collections.Specialized;
 
-namespace QJW
+namespace QJW.Tools
 {
     /// <summary>
     /// URL的操作类

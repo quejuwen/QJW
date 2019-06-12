@@ -1,6 +1,6 @@
 using System;
 
-namespace QJW 
+namespace QJW.Tools
 {
     /// <summary> 
     /// Rmb 的摘要说明。 

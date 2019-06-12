@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace QJW
+namespace QJW.Tools
 {
     /// <summary>
     /// 类说明：CookieHelper

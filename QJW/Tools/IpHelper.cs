@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 
-namespace QJW
+namespace QJW.Tools
 {
     public class IpHelper
     {

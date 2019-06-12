@@ -1,11 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace QJW
+namespace QJW.Tools
 {
     #region 功能说明
     // 举个例子：一个网站有用户系统、商家系统、网站后台3个系统
