@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace QJW.Tools
+namespace QJW
 {
     #region 功能说明
     // 举个例子：一个网站有用户系统、商家系统、网站后台3个系统
@@ -35,7 +36,8 @@ namespace QJW.Tools
         {
             var keyName = CookieNamePrefix + userType;
             var json = JsonConvert.SerializeObject(this);
-            var value =Easp.EncryptString(json, DESKEY);
+            //var json = CYQ.Data.Tool.JsonHelper.ToJson(this);
+            var value = Easp.EncryptString(json, DESKEY);
 
             HttpCookie cookie = new HttpCookie(keyName, value);
             cookie.Expires = Expires;
@@ -64,7 +66,8 @@ namespace QJW.Tools
                 try
                 {
                     var json = Easp.DecryptString(cookie.Value, DESKEY);
-                    var loginuser = JsonConvert.DeserializeObject<LoginUser>(json);
+                    //var loginuser = JsonConvert.DeserializeObject<LoginUser>(json);
+                    var loginuser = CYQ.Data.Tool.JsonHelper.ToEntity<LoginUser>(json);
                     if (loginuser != null)
                     {
                         if (loginuser.Expires >= DateTime.Now)

@@ -2,7 +2,7 @@
 using System.Text;
 using System.Web;
 using System.IO;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using System.Threading;
 
 namespace QJW.Common
@@ -531,28 +531,28 @@ namespace QJW.Common
         /// 从剪切板中复制文件
         /// </summary>
         /// <param name="desPath">目标文件夹路径</param>
-        public static void CopyFileFromClipbord(object desDirPath)
-        {
-            string strDesDirPath = desDirPath.ToString();
-            CreateFolder(strDesDirPath);
-            foreach (var srcPath in Clipboard.GetFileDropList())
-            {
-                string desFilePath = Path.Combine(strDesDirPath, Path.GetFileName(srcPath));
-                CoppyFile(srcPath, desFilePath);
-            }
-        }
+        //public static void CopyFileFromClipbord(object desDirPath)
+        //{
+        //    string strDesDirPath = desDirPath.ToString();
+        //    CreateFolder(strDesDirPath);
+        //    foreach (var srcPath in Clipboard.GetFileDropList())
+        //    {
+        //        string desFilePath = Path.Combine(strDesDirPath, Path.GetFileName(srcPath));
+        //        CoppyFile(srcPath, desFilePath);
+        //    }
+        //}
 
         /// <summary>
         /// 从剪切板中复制文件
         /// </summary>
         /// <param name="desPath">目标文件夹路径</param>
-        public static void CopyFileFromClipbordThread(string desDirPath)
-        {
-            if (string.IsNullOrEmpty(desDirPath)) return;
-            Thread th = new Thread(new ParameterizedThreadStart(CopyFileFromClipbord));
-            th.ApartmentState = ApartmentState.STA;//坑啊
-            th.Start(desDirPath);
-        }
+        //public static void CopyFileFromClipbordThread(string desDirPath)
+        //{
+        //    if (string.IsNullOrEmpty(desDirPath)) return;
+        //    Thread th = new Thread(new ParameterizedThreadStart(CopyFileFromClipbord));
+        //    th.ApartmentState = ApartmentState.STA;//坑啊
+        //    th.Start(desDirPath);
+        //}
         #endregion
 
     }

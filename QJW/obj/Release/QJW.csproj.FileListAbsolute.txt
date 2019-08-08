@@ -34,7 +34,9 @@ F:\VS2017\QJW\QJW\bin\Release\QJW.XML
 F:\VS2017\QJW\QJW\bin\Release\QJW.dll
 F:\VS2017\QJW\QJW\bin\Release\QJW.pdb
 F:\VS2017\QJW\QJW\bin\Release\CYQ.Data.dll
+F:\VS2017\QJW\QJW\bin\Release\Newtonsoft.Json.dll
 F:\VS2017\QJW\QJW\bin\Release\CYQ.Data.xml
+F:\VS2017\QJW\QJW\bin\Release\Newtonsoft.Json.xml
 F:\VS2017\QJW\QJW\obj\Release\QJW.csproj.CoreCompileInputs.cache
 F:\VS2017\QJW\QJW\obj\Release\QJW.csproj.CopyComplete
 F:\VS2017\QJW\QJW\obj\Release\QJW.dll

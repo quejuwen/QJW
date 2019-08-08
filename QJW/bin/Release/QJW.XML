@@ -4,34 +4,32 @@
         <name>QJW</name>
     </assembly>
     <members>
-        <member name="T:QJW.Tools.CookieHelper">
+        <member name="T:QJW.Common.CookieHelper">
             <summary>
-            类说明：CookieHelper
-            联系方式：361983679  
-            更新网站：[url=http://www.sufeinet.com/thread-655-1-1.html]http://www.sufeinet.com/thread-655-1-1.html[/url]
+            Cookie帮助相关类
             </summary>
         </member>
-        <member name="M:QJW.Tools.CookieHelper.ClearCookie(System.String)">
+        <member name="M:QJW.Common.CookieHelper.ClearCookie(System.String)">
             <summary>
             清除指定Cookie
             </summary>
             <param name="cookiename">cookiename</param>
         </member>
-        <member name="M:QJW.Tools.CookieHelper.GetCookieValue(System.String)">
+        <member name="M:QJW.Common.CookieHelper.GetCookieValue(System.String)">
             <summary>
             获取指定Cookie值
             </summary>
             <param name="cookiename">cookiename</param>
             <returns></returns>
         </member>
-        <member name="M:QJW.Tools.CookieHelper.SetCookie(System.String,System.String)">
+        <member name="M:QJW.Common.CookieHelper.SetCookie(System.String,System.String)">
             <summary>
             添加一个Cookie（24小时过期）
             </summary>
             <param name="cookiename"></param>
             <param name="cookievalue"></param>
         </member>
-        <member name="M:QJW.Tools.CookieHelper.SetCookie(System.String,System.String,System.DateTime)">
+        <member name="M:QJW.Common.CookieHelper.SetCookie(System.String,System.String,System.DateTime)">
             <summary>
             添加一个Cookie
             </summary>
@@ -39,236 +37,1045 @@
             <param name="cookievalue">cookie值</param>
             <param name="expires">过期时间 DateTime</param>
         </member>
-        <member name="T:QJW.Tools.IdentityGenerator">
+        <member name="T:QJW.Common.FileHelper">
             <summary>
-            简单Id生成器
+            文件操作帮助类
             </summary>
         </member>
-        <member name="F:QJW.Tools.IdentityGenerator.ht">
+        <member name="M:QJW.Common.FileHelper.GetPostfixStr(System.String)">
             <summary>
-            随机数缓存
+            取后缀名
             </summary>
+            <param name="filename">文件名</param>
+            <returns>.gif|.html格式</returns>
         </member>
-        <member name="F:QJW.Tools.IdentityGenerator.lastTimeStampStyleTicks">
+        <member name="M:QJW.Common.FileHelper.WriteFile(System.String,System.String)">
             <summary>
-            时间戳刻度缓存
+            写文件
             </summary>
+            <param name="Path">文件路径</param>
+            <param name="Strings">文件内容</param>
         </member>
-        <member name="F:QJW.Tools.IdentityGenerator.lastEndDateTimeTicks">
+        <member name="M:QJW.Common.FileHelper.ReadFile(System.String)">
             <summary>
-            时间戳缓存（上一次计算ID的系统时间按时间戳刻度取值）
+            读文件
             </summary>
-        </member>
-        <member name="F:QJW.Tools.IdentityGenerator.ig">
-            <summary>
-            IdentityGenerator的静态实例
-            </summary>
-        </member>
-        <member name="M:QJW.Tools.IdentityGenerator.GetTimestamp(System.DateTime,System.Int64)">
-            <summary>
-            按照时间戳刻度计算当前时间戳
-            </summary>
-            <param name="startDateTime">起始时间</param>
-            <param name="timestampStyleTicks">时间戳刻度值</param>
-            <returns>long</returns>
-        </member>
-        <member name="F:QJW.Tools.IdentityGenerator.random">
-            <summary>
-            静态随机数生成器
-            </summary>
-        </member>
-        <member name="M:QJW.Tools.IdentityGenerator.GetRandom(System.Int32)">
-            <summary>
-            获取随机数
-            </summary>
-            <param name="length">随机数长度</param>
+            <param name="Path">文件路径</param>
             <returns></returns>
         </member>
-        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity">
+        <member name="M:QJW.Common.FileHelper.FileAdd(System.String,System.String)">
             <summary>
-            计算一个Id
-            以2005-1-1 00:00 000为起始时间刻度
+            追加文件
             </summary>
-            <returns>long</returns>
+            <param name="Path">文件路径</param>
+            <param name="strings">内容</param>
         </member>
-        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity(QJW.Tools.TimestampStyle)">
+        <member name="M:QJW.Common.FileHelper.CoppyFile(System.String,System.String)">
             <summary>
-            计算一个Id
-            以2005-1-1 00:00 000为起始时间刻度
+            拷贝文件
             </summary>
-            <param name="timestampStyle">时间戳刻度</param>
-            <returns>long</returns>
+            <param name="OrignFile">原始文件</param>
+            <param name="NewFile">新文件路径</param>
         </member>
-        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity(System.Int32)">
+        <member name="M:QJW.Common.FileHelper.FileDel(System.String)">
             <summary>
-            计算一个Id
+            删除文件
             </summary>
-            <param name="randomLength">随机数长度</param>
-            <returns>long</returns>
+            <param name="Path">路径</param>
         </member>
-        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity(QJW.Tools.TimestampStyle,System.Int32)">
+        <member name="M:QJW.Common.FileHelper.FileMove(System.String,System.String)">
             <summary>
-            计算一个Id
+            移动文件
             </summary>
-            <param name="timestampStyle">时间戳刻度</param>
-            <param name="randomLength">随机数长度</param>
-            <returns>long</returns>
+            <param name="OrignFile">原始路径</param>
+            <param name="NewFile">新路径</param>
         </member>
-        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity(System.DateTime,QJW.Tools.TimestampStyle,System.Int32)">
+        <member name="M:QJW.Common.FileHelper.CreateFolder(System.String)">
             <summary>
-            计算一个Id
+            创建文件夹
             </summary>
-            <param name="startDateTime">时间戳的起始时间</param>
-            <param name="timestampStyle">时间戳刻度</param>
-            <param name="randomLength">随机数长度</param>
-            <returns>long</returns>
+            <param name="Path"></param>
         </member>
-        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity(System.DateTime,System.Int64,System.Int32)">
+        <member name="M:QJW.Common.FileHelper.CreateFile(System.String)">
             <summary>
-            计算一个Id
+            创建空文件
             </summary>
-            <param name="startDateTime">时间戳的起始时间</param>
-            <param name="timestampStyleTicks">时间戳刻度(毫微秒单位)</param>
-            <param name="randomLength">随机数长度</param>
-            <returns>long</returns>
+            <param name="Path">文件路径</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:QJW.Tools.TimestampStyle" -->
-        <member name="F:QJW.Tools.TimestampStyle.MillSecondTicks">
+        <member name="M:QJW.Common.FileHelper.DeleteFolder(System.String)">
             <summary>
-            时间刻度精度取为1毫秒（此项无意义，因为一般PC机系统时钟只能精确到10毫秒）
+            递归删除文件夹目录及文件
             </summary>
+            <param name="dir"></param>  
+            <returns></returns>
         </member>
-        <member name="F:QJW.Tools.TimestampStyle.TenMillSecondTicks">
+        <member name="M:QJW.Common.FileHelper.CopyDir(System.String,System.String)">
             <summary>
-            时间刻度精度取为10毫秒，这是一般PC机系统时钟的最小精度单位
+            指定文件夹下面的所有内容copy到目标文件夹下面
             </summary>
+            <param name="srcPath">原始路径</param>
+            <param name="aimPath">目标文件夹</param>
         </member>
-        <member name="F:QJW.Tools.TimestampStyle.HundredMillSecondTicks">
+        <member name="M:QJW.Common.FileHelper.GetFoldAll(System.String)">
             <summary>
-            时间刻度精度取为100毫秒
+            获取指定文件夹下所有子目录及文件
             </summary>
+            <param name="Path">详细路径</param>
         </member>
-        <member name="F:QJW.Tools.TimestampStyle.SecondTicks">
+        <member name="M:QJW.Common.FileHelper.ListTreeShow(System.IO.DirectoryInfo,System.Int32,System.String)">
             <summary>
-            时间刻度精度取为1秒，即1000毫秒
+            获取指定文件夹下所有子目录及文件函数
             </summary>
+            <param name="theDir">指定目录</param>
+            <param name="nLevel">默认起始值,调用时,一般为0</param>
+            <param name="Rn">用于迭加的传入值,一般为空</param>
+            <returns></returns>
         </member>
-        <member name="F:QJW.Tools.TimestampStyle.FiveSecondTicks">
+        <member name="M:QJW.Common.FileHelper.GetFoldAll(System.String,System.String,System.String)">
+             <summary>
+             获取指定文件夹下所有子目录及文件(下拉框形)
+             </summary>
+             <param name="Path">详细路径</param>
+            <param name="DropName">下拉列表名称</param>
+            <param name="tplPath">默认选择模板名称</param>
+        </member>
+        <member name="M:QJW.Common.FileHelper.ListTreeShow(System.IO.DirectoryInfo,System.Int32,System.String,System.String)">
             <summary>
-            时间刻度精度取为5秒
+            获取指定文件夹下所有子目录及文件函数
             </summary>
+            <param name="theDir">指定目录</param>
+            <param name="nLevel">默认起始值,调用时,一般为0</param>
+            <param name="Rn">用于迭加的传入值,一般为空</param>
+            <param name="tplPath">默认选择模板名称</param>
+            <returns></returns>
         </member>
-        <member name="F:QJW.Tools.TimestampStyle.TenSecondTicks">
+        <member name="M:QJW.Common.FileHelper.GetDirectoryLength(System.String)">
             <summary>
-            时间刻度精度取为10秒
+            获取文件夹大小
             </summary>
+            <param name="dirPath">文件夹路径</param>
+            <returns></returns>
         </member>
-        <member name="F:QJW.Tools.TimestampStyle.MinutesTicks">
+        <member name="M:QJW.Common.FileHelper.GetFileAttibe(System.String)">
             <summary>
-            时间刻度精度取为1分种（60秒）
+            获取指定文件详细属性
+            </summary>
+            <param name="filePath">文件详细路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:QJW.Common.HtmlHelper">
+            <summary>
+            Html操作相关类
             </summary>
         </member>
-        <member name="M:QJW.Tools.IpHelper.GetUserIp">
+        <member name="P:QJW.Common.HtmlHelper.CookieContainer">
+            <summary> 
+            Cookie
+            </summary> 
+        </member>
+        <member name="P:QJW.Common.HtmlHelper.Encoding">
+            <summary> 
+            语言
+            </summary> 
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.GetHtml(System.String,System.String,System.Boolean,System.Net.CookieContainer)">
+            <summary>
+            获取HTML
+            </summary>
+            <param name="url">地址</param>
+            <param name="postData">post 提交的字符串</param>
+            <param name="isPost">是否是post</param>
+            <param name="cookieContainer">CookieContainer</param>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.GetHtml(System.String,System.Net.CookieContainer)">
+            <summary>
+            获取HTML
+            </summary>
+            <param name="url">地址</param>
+            <param name="cookieContainer">CookieContainer</param>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.GetStream(System.String,System.Net.CookieContainer)">
+            <param name="url">地址</param>
+            <param name="cookieContainer">cookieContainer</param>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.NoHTML(System.String)">
+            <summary>   
+            清除HTML标记   
+            </summary>   
+            <param name="NoHTML">包括HTML的源码</param>   
+            <returns>已经去除后的文字</returns>   
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.DelHtmlCode(System.String)">
+            <summary>
+            删除文本中带的HTML标记
+            </summary>
+            <param name="InString">输入要删除带HTML的字符串</param>    
+            <returns>返回处理过的字符串</returns>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.GetHref(System.String)">
+            <summary>
+            获取页面的链接正则
+            </summary>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.GetImgSrc(System.String,System.String)">
+            <summary>
+            匹配页面的图片地址
+            </summary>
+            <param name="imgHttp">要补充的http://路径信息</param>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.GetImg(System.String,System.String)">
+            <summary>
+            匹配<img src="" />中的图片路径实际链接
+            </summary>
+            <param name="ImgString"><img src="" />字符串</param>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.Get_Http(System.String)">
+            <summary>
+            以GET方式抓取远程页面内容
+            </summary>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.Post_Http(System.String,System.String,System.String)">
+            <summary>
+            以POST方式抓取远程页面内容
+            </summary>
+            <param name="postData">参数列表</param>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.ZipHtml(System.String)">
+            <summary>
+            压缩HTML输出
+            </summary>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.DelHtml(System.String,System.String)">
+            <summary>
+            过滤指定HTML标签
+            </summary>
+            <param name="s_TextStr">要过滤的字符</param>
+            <param name="html_Str">a img p div</param>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.File(System.String,System.Web.UI.Page)">
+            <summary>
+            加载文件块
+            </summary>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.CSS(System.String,System.Web.UI.Page)">
+            <summary>
+            加载CSS样式文件
+            </summary>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.JS(System.String,System.Web.UI.Page)">
+            <summary>
+            加载javascript脚本文件
+            </summary>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.alert(System.String,System.String)">
+            <summary>
+            弹出警告信息并跳转到指定页面地址
+            </summary>
+            <param name="str">警告信息内容</param>
+            <param name="url">指定要跳转的页面地址</param>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.erro(System.String)">
+            <summary>
+            弹出信息 无跳转动作
+            </summary>
+            <param name="str">信息内容</param>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.goback">
+            <summary>
+            后退一页
+            </summary>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.DoJsFunction(System.String)">
+            <summary>
+            执行js命令
+            </summary>
+            <param name="function">传入要执行的js函数[包含参数的函数]</param>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.Decode(System.String)">
+            <summary>
+            解码得到url值
+            </summary>
+            <param name="str">string</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.Encode(System.String)">
+            <summary>
+            编码传入url
+            </summary>
+            <param name="str">string</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:QJW.Common.HtmlHelper.IsEmpty(System.String,System.String)">
+            <summary>
+            判断输入是否为空 并弹出错误信息
+            </summary>
+            <param name="str">验证内容</param>
+            <param name="erroStr">错误提示内容</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:QJW.Common.ImageHelper">
+            <summary>
+            图片处理帮助类
+            </summary>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.MakeThumbnail(System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            生成缩略图
+            </summary>
+            <param name="originalImagePath">源图路径（物理路径）</param>
+            <param name="thumbnailPath">缩略图路径（物理路径）</param>
+            <param name="width">缩略图宽度</param>
+            <param name="height">缩略图高度</param>
+            <param name="mode">生成缩略图的方式</param>    
+        </member>
+        <member name="M:QJW.Common.ImageHelper.ImageWatermark(System.String,System.String,System.String)">
+            <summary>
+            图片水印处理方法
+            </summary>
+            <param name="path">需要加载水印的图片路径（绝对路径）</param>
+            <param name="waterpath">水印图片（绝对路径）</param>
+            <param name="location">水印位置（传送正确的代码）</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.GetLocation(System.String,System.Drawing.Image,System.Drawing.Image)">
+            <summary>
+            图片水印位置处理方法
+            </summary>
+            <param name="location">水印位置</param>
+            <param name="img">需要添加水印的图片</param>
+            <param name="waterimg">水印图片</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.LetterWatermark(System.String,System.Int32,System.String,System.Drawing.Color,System.String)">
+            <summary>
+            文字水印处理方法
+            </summary>
+            <param name="path">图片路径（绝对路径）</param>
+            <param name="size">字体大小</param>
+            <param name="letter">水印文字</param>
+            <param name="color">颜色</param>
+            <param name="location">水印位置</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.GetLocation(System.String,System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+            文字水印位置的方法
+            </summary>
+            <param name="location">位置代码</param>
+            <param name="img">图片对象</param>
+            <param name="width">宽(当水印类型为文字时,传过来的就是字体的大小)</param>
+            <param name="height">高(当水印类型为文字时,传过来的就是字符的长度)</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.LDPic(System.Drawing.Bitmap,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            调整光暗
+            </summary>
+            <param name="mybm">原始图片</param>
+            <param name="width">原始图片的长度</param>
+            <param name="height">原始图片的高度</param>
+            <param name="val">增加或减少的光暗值</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.RePic(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            反色处理
+            </summary>
+            <param name="mybm">原始图片</param>
+            <param name="width">原始图片的长度</param>
+            <param name="height">原始图片的高度</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.FD(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            浮雕处理
+            </summary>
+            <param name="oldBitmap">原始图片</param>
+            <param name="Width">原始图片的长度</param>
+            <param name="Height">原始图片的高度</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.ResizeImage(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            拉伸图片
+            </summary>
+            <param name="bmp">原始图片</param>
+            <param name="newW">新的宽度</param>
+            <param name="newH">新的高度</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.FilPic(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            滤色处理
+            </summary>
+            <param name="mybm">原始图片</param>
+            <param name="width">原始图片的长度</param>
+            <param name="height">原始图片的高度</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.RevPicLR(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            左右翻转
+            </summary>
+            <param name="mybm">原始图片</param>
+            <param name="width">原始图片的长度</param>
+            <param name="height">原始图片的高度</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.RevPicUD(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            上下翻转
+            </summary>
+            <param name="mybm">原始图片</param>
+            <param name="width">原始图片的长度</param>
+            <param name="height">原始图片的高度</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.Compress(System.String,System.String)">
+            <summary>
+            压缩到指定尺寸
+            </summary>
+            <param name="oldfile">原文件</param>
+            <param name="newfile">新文件</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.BWPic(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            转换为黑白图片
+            </summary>
+            <param name="mybt">要进行处理的图片</param>
+            <param name="width">图片的长度</param>
+            <param name="height">图片的高度</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.GetFrames(System.String,System.String)">
+            <summary>
+            获取图片中的各帧
+            </summary>
+            <param name="pPath">图片路径</param>
+            <param name="pSavePath">保存路径</param>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.CaptureImage(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            从大图中截取一部分图片
+            </summary>
+            <param name="fromImagePath">来源图片地址</param>        
+            <param name="offsetX">从偏移X坐标位置开始截取</param>
+            <param name="offsetY">从偏移Y坐标位置开始截取</param>
+            <param name="toImagePath">保存图片地址</param>
+            <param name="width">保存图片的宽度</param>
+            <param name="height">保存图片的高度</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.ImageHelper.GetPartOfImage(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            get a certain rectangle part of a known graphic
+            </summary>
+            <param name="bitmapPathAndName">path and name of the source graphic</param>
+            <param name="width">width of the part graphic</param>
+            <param name="height">height of the part graphic</param>
+            <param name="offsetX">the width offset in the source graphic</param>
+            <param name="offsetY">the height offset in the source graphic</param>
+            <returns>wanted graphic</returns>
+        </member>
+        <member name="T:QJW.Common.IpHelper">
+            <summary>
+            共用工具类
+            </summary>
+        </member>
+        <member name="M:QJW.Common.IpHelper.GetUserIp">
             <summary>
             获得用户IP
             </summary>
         </member>
-        <member name="M:QJW.Tools.IpHelper.GetIP">
-            <summary>
-            获得当前页面客户端的IP
-            </summary>
-            <returns>当前页面客户端的IP</returns>
+        <member name="T:QJW.Common.UploadEventArgs">
+            <summary>    
+            上传数据参数    
+            </summary>    
         </member>
-        <member name="M:QJW.Tools.IpHelper.IsIP(System.String)">
+        <member name="P:QJW.Common.UploadEventArgs.BytesSent">
+            <summary>       
+            已发送的字节数    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.UploadEventArgs.TotalBytes">
+            <summary>    
+            总字节数    
+            </summary>    
+        </member>
+        <member name="T:QJW.Common.DownloadEventArgs">
+            <summary>    
+            下载数据参数    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.DownloadEventArgs.BytesReceived">
+            <summary>    
+            已接收的字节数    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.DownloadEventArgs.TotalBytes">
+            <summary>    
+            总字节数    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.DownloadEventArgs.ReceivedData">
+            <summary>    
+            当前缓冲区接收的数据    
+            </summary>    
+        </member>
+        <member name="T:QJW.Common.WebClientHelper">
             <summary>
-            是否为ip
+            网络客户端帮助类
             </summary>
-            <param name="ip"></param>
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.#ctor">
+            <summary>    
+            创建WebClient的实例    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.BufferSize">
+            <summary>    
+            设置发送和接收的数据缓冲大小    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.ResponseHeaders">
+            <summary>    
+            获取响应头集合    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.RequestHeaders">
+            <summary>    
+            获取请求头集合    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.Proxy">
+            <summary>    
+            获取或设置代理    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.Encoding">
+            <summary>    
+            获取或设置请求与响应的文本编码方式    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.RespHtml">
+            <summary>    
+            获取或设置响应的html代码    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.WebClientHelper.CookieContainer">
+            <summary>    
+            获取或设置与请求关联的Cookie容器    
+            </summary>    
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.GetHtml(System.String)">
+            <summary>    
+             获取网页源代码    
+            </summary>    
+            <param name="url">网址</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.DownloadFile(System.String,System.String)">
+            <summary>    
+            下载文件    
+            </summary>    
+            <param name="url">文件URL地址</param>    
+            <param name="filename">文件保存完整路径</param>    
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.GetData(System.String)">
+            <summary>    
+            从指定URL下载数据    
+            </summary>    
+            <param name="url">网址</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.Post(System.String,System.String)">
+            <summary>    
+            向指定URL发送文本数据    
+            </summary>    
+            <param name="url">网址</param>    
+            <param name="postData">urlencode编码的文本数据</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.Post(System.String,System.Byte[])">
+            <summary>    
+            向指定URL发送字节数据    
+            </summary>    
+            <param name="url">网址</param>    
+            <param name="postData">发送的字节数组</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.Post(System.String,QJW.Common.MultipartForm)">
+            <summary>    
+            向指定网址发送mulitpart编码的数据    
+            </summary>    
+            <param name="url">网址</param>    
+            <param name="mulitpartForm">mulitpart form data</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.GetData(System.Net.HttpWebRequest)">
+            <summary>    
+            读取请求返回的数据    
+            </summary>    
+            <param name="request">请求对象</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.PostData(System.Net.HttpWebRequest,System.Byte[])">
+            <summary>    
+            发送请求数据    
+            </summary>    
+            <param name="request">请求对象</param>    
+            <param name="postData">请求发送的字节数组</param>    
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.CreateRequest(System.String,System.String)">
+            <summary>    
+            创建HTTP请求    
+            </summary>    
+            <param name="url">URL地址</param>    
+            <returns></returns>    
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.SaveCookiesToDisk">
+            <summary>    
+            将Cookie保存到磁盘    
+            </summary>    
+        </member>
+        <member name="M:QJW.Common.WebClientHelper.LoadCookiesFromDisk">
+            <summary>    
+            从磁盘加载Cookie    
+            </summary>    
+        </member>
+        <member name="T:QJW.Common.MultipartForm">
+            <summary>    
+            对文件和文本数据进行Multipart形式的编码    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.MultipartForm.FormData">
+            <summary>    
+            获取编码后的字节数组    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.MultipartForm.ContentType">
+            <summary>    
+            获取此编码内容的类型    
+            </summary>    
+        </member>
+        <member name="P:QJW.Common.MultipartForm.StringEncoding">
+            <summary>    
+            获取或设置对字符串采用的编码类型    
+            </summary>    
+        </member>
+        <member name="M:QJW.Common.MultipartForm.#ctor">
+            <summary>    
+            实例化    
+            </summary>    
+        </member>
+        <member name="M:QJW.Common.MultipartForm.AddFlie(System.String,System.String)">
+            <summary>    
+            添加一个文件    
+            </summary>    
+            <param name="name">文件域名称</param>    
+            <param name="filename">文件的完整路径</param>    
+        </member>
+        <member name="M:QJW.Common.MultipartForm.AddFlie(System.String,System.String,System.Byte[],System.Int32)">
+            <summary>    
+            添加一个文件    
+            </summary>    
+            <param name="name">文件域名称</param>    
+            <param name="filename">文件名</param>    
+            <param name="fileData">文件二进制数据</param>    
+            <param name="dataLength">二进制数据大小</param>    
+        </member>
+        <member name="M:QJW.Common.MultipartForm.AddString(System.String,System.String)">
+            <summary>    
+            添加字符串    
+            </summary>    
+            <param name="name">文本域名称</param>    
+            <param name="value">文本值</param>    
+        </member>
+        <member name="M:QJW.Common.MultipartForm.GetContentType(System.String)">
+            <summary>    
+            从注册表获取文件类型    
+            </summary>    
+            <param name="filename">包含扩展名的文件名</param>    
+            <returns>如：application/stream</returns>    
+        </member>
+        <member name="T:QJW.Common.RandomHelper">
+            <summary>
+            使用Random类生成伪随机数和字符串
+            </summary>
+        </member>
+        <member name="M:QJW.Common.RandomHelper.GetRandomInt(System.Int32,System.Int32)">
+            <summary>
+            生成一个指定范围的随机整数，该随机数范围包括最小值，但不包括最大值
+            </summary>
+            <param name="minNum">最小值</param>
+            <param name="maxNum">最大值</param>
+        </member>
+        <member name="M:QJW.Common.RandomHelper.GetRandomDouble">
+            <summary>
+            生成一个0.0到1.0的随机小数
+            </summary>
+        </member>
+        <member name="M:QJW.Common.RandomHelper.GetRandomArray``1(``0[])">
+            <summary>
+            对一个数组进行随机排序
+            </summary>
+            <typeparam name="T">数组的类型</typeparam>
+            <param name="arr">需要随机排序的数组</param>
+        </member>
+        <member name="M:QJW.Common.RandomHelper.GetRandomCode(System.String,System.Int32)">
+            <summary>
+            从字符串里随机得到，规定个数的字符串.
+            </summary>
+            <param name="allChar"></param>
+            <param name="CodeCount"></param>
             <returns></returns>
         </member>
-        <member name="M:QJW.Tools.IpHelper.GetLocalIP">
+        <member name="M:QJW.Common.RandomHelper.GenerateCheckCodeNum(System.Int32)">
             <summary>
-            获取本地机器IP地址
+            随机生成不重复数字字符串
             </summary>
+            <param name="codeCount"></param>
+            <returns></returns>  
+        </member>
+        <member name="M:QJW.Common.RandomHelper.GenerateCheckCode(System.Int32)">
+            <summary>
+            随机生成不重复字符串（数字和字母混和）
+            </summary>
+            <param name="codeCount"></param>
             <returns></returns>
         </member>
-        <member name="M:QJW.Tools.IpHelper.IPtoNum(System.String)">
-            <summary> 
-            把IP地址转换为数字格式 
-            </summary> 
-            <param name="strIp">IP地址</param> 
-            <returns>数字</returns> 
-        </member>
-        <member name="T:QJW.Tools.Rmb">
-            <summary> 
-            Rmb 的摘要说明。 
-            </summary> 
-        </member>
-        <member name="M:QJW.Tools.Rmb.CmycurD(System.Decimal)">
-            <summary> 
-            转换人民币大小金额 
-            </summary> 
-            <param name="num">金额</param> 
-            <returns>返回大写形式</returns> 
-        </member>
-        <member name="M:QJW.Tools.Rmb.CmycurD(System.String)">
-            <summary> 
-            一个重载，将字符串先转换成数字在调用CmycurD(decimal num) 
-            </summary> 
-            <param name="num">用户输入的金额，字符串形式未转成decimal</param> 
-            <returns></returns> 
-        </member>
-        <member name="T:QJW.Tools.URLHelper">
+        <member name="M:QJW.Common.RandomHelper.GetRandomString(System.Int32)">
             <summary>
-            URL的操作类
+            产生随机字符串（数字和字母混和）
+            </summary>
+            <returns>字符串</returns>
+        </member>
+        <member name="T:QJW.Common.SessionHelper">
+            <summary>
+            Session操作类
             </summary>
         </member>
-        <member name="M:QJW.Tools.URLHelper.IsBase64(System.String)">
+        <member name="M:QJW.Common.SessionHelper.Set(System.String,System.Object)">
             <summary>
-            是否是Base64字符串
+            设置session
             </summary>
-            <param name="eStr"></param>
+            <param name="name">session 名</param>
+            <param name="val">session 值</param>
+        </member>
+        <member name="M:QJW.Common.SessionHelper.Add(System.String,System.String)">
+            <summary>
+            添加Session，调动有效期为20分钟
+            </summary>
+            <param name="strSessionName">Session对象名称</param>
+            <param name="strValue">Session值</param>
+        </member>
+        <member name="M:QJW.Common.SessionHelper.AddStrArray(System.String,System.String[])">
+            <summary>
+            添加Session，调动有效期为20分钟
+            </summary>
+            <param name="strSessionName">Session对象名称</param>
+            <param name="strValues">Session值数组</param>
+        </member>
+        <member name="M:QJW.Common.SessionHelper.Add(System.String,System.String,System.Int32)">
+            <summary>
+            添加Session
+            </summary>
+            <param name="strSessionName">Session对象名称</param>
+            <param name="strValue">Session值</param>
+            <param name="iExpires">调动有效期（分钟）</param>
+        </member>
+        <member name="M:QJW.Common.SessionHelper.AddStrArray(System.String,System.String[],System.Int32)">
+            <summary>
+            添加Session
+            </summary>
+            <param name="strSessionName">Session对象名称</param>
+            <param name="strValues">Session值数组</param>
+            <param name="iExpires">调动有效期（分钟）</param>
+        </member>
+        <member name="M:QJW.Common.SessionHelper.Get(System.String)">
+            <summary>
+            根据session名获取session对象
+            </summary>
+            <param name="name"></param>
             <returns></returns>
         </member>
-        <member name="M:QJW.Tools.URLHelper.UrlEncode(System.String)">
+        <member name="M:QJW.Common.SessionHelper.GetStr(System.String)">
             <summary>
-            返回 URL 字符串的编码结果
+            读取某个Session对象字符串值
             </summary>
-            <param name="str">字符串</param>
-            <returns>编码结果</returns>
+            <param name="strSessionName">Session对象名称</param>
+            <returns>Session对象字符串值</returns>
         </member>
-        <member name="M:QJW.Tools.URLHelper.UrlDecode(System.String)">
+        <member name="M:QJW.Common.SessionHelper.GetStrArray(System.String)">
             <summary>
-            返回 URL 字符串的解码结果
+            读取某个Session对象值数组
             </summary>
-            <param name="str">字符串</param>
-            <returns>解码结果</returns>
+            <param name="strSessionName">Session对象名称</param>
+            <returns>Session对象值数组</returns>
         </member>
-        <member name="M:QJW.Tools.URLHelper.AddParam(System.String,System.String,System.String)">
+        <member name="M:QJW.Common.SessionHelper.Delete(System.String)">
             <summary>
-            添加URL参数
+            删除某个Session对象
             </summary>
+            <param name="strSessionName">Session对象名称</param>
         </member>
-        <member name="M:QJW.Tools.URLHelper.UpdateParam(System.String,System.String,System.String)">
+        <member name="T:QJW.Common.StringHelper">
             <summary>
-            更新URL参数
+            字符串操作类
             </summary>
         </member>
-        <member name="M:QJW.Tools.URLHelper.ParseUrl(System.String,System.String@,System.Collections.Specialized.NameValueCollection@)">
+        <member name="M:QJW.Common.StringHelper.GetStrList(System.String,System.Char,System.Boolean)">
             <summary>
-            分析 url 字符串中的参数信息
+            把字符串按照分隔符转换成 List
             </summary>
-            <param name="url">输入的 URL</param>
-            <param name="baseUrl">输出 URL 的基础部分</param>
-            <param name="nvc">输出分析后得到的 (参数名,参数值) 的集合</param>
+            <param name="str">源字符串</param>
+            <param name="speater">分隔符</param>
+            <param name="toLower">是否转换为小写</param>
+            <returns></returns>
         </member>
-        <member name="M:QJW.Tools.URLHelper.autoConvertToURL(System.Object)">
-            <summary> 
-            自动识别文本中的URL 
-            可以识别 www.，http://， ftp://， xx@xx.xx， mms:// 
-            </summary> 
-            <param name="input">输入数据</param> 
-            <returns>自动识别URL后的数据</returns> 
+        <member name="M:QJW.Common.StringHelper.GetStrList(System.String,System.Char)">
+            <summary>
+            把字符串按照分隔符转换成 List
+            </summary>
+            <param name="str">源字符串</param>
+            <param name="speater">分隔符</param>
+            <param name="toLower">是否转换为小写</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetStrArray(System.String)">
+            <summary>
+            把字符串转 按照, 分割 换为数据
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetStrArray(System.String,System.Char)">
+            <summary>
+            分割字符串，按指定的字符分割
+            </summary>
+            <param name="str"></param>
+            <param name="splitstr"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:QJW.Common.StringHelper.GetArrayStr(System.Collections.Generic.List{System.String},System.String)" -->
+        <member name="M:QJW.Common.StringHelper.GetArrayStr(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            得到数组列表以逗号分隔的字符串
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetArrayValueStr(System.Collections.Generic.Dictionary{System.Int32,System.Int32})">
+            <summary>
+            得到数组列表以逗号分隔的字符串
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetUniqueStrArray(System.String,System.Char)">
+            <summary>
+            把字符串按照指定分隔符装成 List 去除重复
+            </summary>
+            <param name="o_str"></param>
+            <param name="sepeater"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.DelLastComma(System.String)">
+            <summary>
+            删除最后结尾的一个逗号
+            </summary>
+        </member>
+        <member name="M:QJW.Common.StringHelper.DelLastChar(System.String,System.String)">
+            <summary>
+            删除最后结尾的指定字符后的字符
+            </summary>
+        </member>
+        <member name="M:QJW.Common.StringHelper.ToDBC(System.String)">
+             <summary>
+             全角转半角的函数(DBC case)
+             </summary>
+             <param name="input">任意字符串</param>
+             <returns>半角字符串</returns>
+            <remarks>
+            全角空格为12288，半角空格为32
+            其他字符半角(33-126)与全角(65281-65374)的对应关系是：均相差65248
+            </remarks>
+        </member>
+        <member name="M:QJW.Common.StringHelper.ToSBC(System.String)">
+             <summary>
+             半角转全角的函数(SBC case)
+             </summary>
+             <param name="input">任意字符串</param>
+             <returns>全角字符串</returns>
+            <remarks>
+            全角空格为12288，半角空格为32
+            其他字符半角(33-126)与全角(65281-65374)的对应关系是：均相差65248
+            </remarks>        
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetCleanStyle(System.String,System.String)">
+            <summary>
+             将字符串样式转换为纯字符串
+            </summary>
+            <param name="StrList"></param>
+            <param name="SplitString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetNewStyle(System.String,System.String,System.String,System.String@)">
+            <summary>
+            将字符串转换为新样式
+            </summary>
+            <param name="StrList"></param>
+            <param name="NewStyle"></param>
+            <param name="SplitString"></param>
+            <param name="Error"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.StrToId(System.String)">
+            <summary>
+            获取正确的Id，如果不是正整数，返回0
+            </summary>
+            <param name="_value"></param>
+            <returns>返回正确的整数ID，失败返回0</returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.IsNumberId(System.String)">
+            <summary>
+            检查一个字符串是否是纯数字构成的，一般用于查询字符串参数的有效性验证。(0除外)
+            </summary>
+            <param name="_value">需验证的字符串。。</param>
+            <returns>是否合法的bool值。</returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.QuickValidate(System.String,System.String)">
+            <summary>
+            快速验证一个字符串是否符合指定的正则表达式。
+            </summary>
+            <param name="_express">正则表达式的内容。</param>
+            <param name="_value">需验证的字符串。</param>
+            <returns>是否合法的bool值。</returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetMD5(System.String)">
+            <summary>
+            根据配置对指定字符串进行 MD5 加密
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetStrLength(System.String)">
+            <summary>
+            得到字符串长度，一个汉字长度为2
+            </summary>
+            <param name="inputString">参数字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.ClipString(System.String,System.Int32)">
+            <summary>
+            截取指定长度字符串
+            </summary>
+            <param name="inputString">要处理的字符串</param>
+            <param name="len">指定长度</param>
+            <returns>返回处理后的字符串</returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetSubStr(System.String,System.Int32)">
+            <summary>
+            检查字符串最大长度，返回指定长度的串
+            </summary>
+            <param name="input">输入字符串</param>
+            <param name="maxLength">最大长度</param>
+            <returns></returns>			
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetSqlText(System.String,System.Int32)">
+            <summary>   
+            截取文本，区分中英文字符，中文算两个长度，英文算一个长度，用于数据库存储
+            </summary>
+            <param name="str">待截取的字符串</param>
+            <param name="length">需计算长度的字符串</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetLeftStr(System.String,System.Int32)">
+            <summary>
+            从字符串左边起给定的位置截取字符串
+            </summary>
+            <param name="str">给定要截取的字符串内容</param>
+            <param name="len">截取的起始位置</param>
+            <returns>截取后的字符串 string</returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.HtmlToTxt(System.String)">
+            <summary>
+            HTML转行成TEXT
+            </summary>
+            <param name="strHtml"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.safeInt(System.String)">
+            <summary>
+            返回安全整数类型
+            </summary>
+            <param name="str">要转换的字符串</param>
+            <returns>int16 整形数字</returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.safeStr(System.String)">
+            <summary>
+            转化为安全字符串 去除其中的英文单引号
+            </summary>
+            <param name="str">字符串内容</param>
+            <returns>string 处理后的</returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.safeText(System.String)">
+            <summary>
+            把字符串转化为安全的text内容
+            </summary>
+            <param name="str">传入的字符串内容</param>
+            <returns>转化后结果 string</returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.safeStrToSource(System.String)">
+            <summary>
+            把'还原成单引号
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.safeTextToSource(System.String)">
+            <summary>
+            把经过安全的text内容转化为源字符串
+            </summary>
+            <param name="str">传入的字符串内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.IsSafeSql(System.String)">
+            <summary>
+            是否安全
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.SafeSql(System.String)">
+            <summary>
+            替换不安全sql
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.GetRandomCode(System.String,System.Int32)">
+            <summary>
+            从字符串里随机得到，规定个数的字符串.
+            </summary>
+            <param name="allChar"></param>
+            <param name="CodeCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.StrToHtml(System.String)">
+            <summary>
+            转换成 HTML code
+            </summary>
+            <param name="str">string</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.HtmlToStr(System.String)">
+             <summary>
+            解析html成 普通文本
+             </summary>
+             <param name="str">string</param>
+             <returns>string</returns>
+        </member>
+        <member name="M:QJW.Common.StringHelper.ClearInputText(System.String,System.Int32)">
+            <summary>
+            清除字符串中的危险字符
+            </summary>
+            <param name="inputString"></param>
+            <param name="maxLength"></param>
+            <returns></returns>
         </member>
         <member name="T:QJW.Easp">
             <summary>
@@ -637,155 +1444,247 @@
             <param name="HtmlCode">HTML源代码</param>
             <returns></returns>
         </member>
-        <member name="T:QJW.Common.HtmlHelper">
+        <member name="T:QJW.Tools.IdentityGenerator">
             <summary>
-            Html操作相关类
+            简单Id生成器
             </summary>
         </member>
-        <member name="P:QJW.Common.HtmlHelper.CookieContainer">
+        <member name="F:QJW.Tools.IdentityGenerator.ht">
+            <summary>
+            随机数缓存
+            </summary>
+        </member>
+        <member name="F:QJW.Tools.IdentityGenerator.lastTimeStampStyleTicks">
+            <summary>
+            时间戳刻度缓存
+            </summary>
+        </member>
+        <member name="F:QJW.Tools.IdentityGenerator.lastEndDateTimeTicks">
+            <summary>
+            时间戳缓存（上一次计算ID的系统时间按时间戳刻度取值）
+            </summary>
+        </member>
+        <member name="F:QJW.Tools.IdentityGenerator.ig">
+            <summary>
+            IdentityGenerator的静态实例
+            </summary>
+        </member>
+        <member name="M:QJW.Tools.IdentityGenerator.GetTimestamp(System.DateTime,System.Int64)">
+            <summary>
+            按照时间戳刻度计算当前时间戳
+            </summary>
+            <param name="startDateTime">起始时间</param>
+            <param name="timestampStyleTicks">时间戳刻度值</param>
+            <returns>long</returns>
+        </member>
+        <member name="F:QJW.Tools.IdentityGenerator.random">
+            <summary>
+            静态随机数生成器
+            </summary>
+        </member>
+        <member name="M:QJW.Tools.IdentityGenerator.GetRandom(System.Int32)">
+            <summary>
+            获取随机数
+            </summary>
+            <param name="length">随机数长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity">
+            <summary>
+            计算一个Id
+            以2005-1-1 00:00 000为起始时间刻度
+            </summary>
+            <returns>long</returns>
+        </member>
+        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity(QJW.Tools.TimestampStyle)">
+            <summary>
+            计算一个Id
+            以2005-1-1 00:00 000为起始时间刻度
+            </summary>
+            <param name="timestampStyle">时间戳刻度</param>
+            <returns>long</returns>
+        </member>
+        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity(System.Int32)">
+            <summary>
+            计算一个Id
+            </summary>
+            <param name="randomLength">随机数长度</param>
+            <returns>long</returns>
+        </member>
+        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity(QJW.Tools.TimestampStyle,System.Int32)">
+            <summary>
+            计算一个Id
+            </summary>
+            <param name="timestampStyle">时间戳刻度</param>
+            <param name="randomLength">随机数长度</param>
+            <returns>long</returns>
+        </member>
+        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity(System.DateTime,QJW.Tools.TimestampStyle,System.Int32)">
+            <summary>
+            计算一个Id
+            </summary>
+            <param name="startDateTime">时间戳的起始时间</param>
+            <param name="timestampStyle">时间戳刻度</param>
+            <param name="randomLength">随机数长度</param>
+            <returns>long</returns>
+        </member>
+        <member name="M:QJW.Tools.IdentityGenerator.GetIdentity(System.DateTime,System.Int64,System.Int32)">
+            <summary>
+            计算一个Id
+            </summary>
+            <param name="startDateTime">时间戳的起始时间</param>
+            <param name="timestampStyleTicks">时间戳刻度(毫微秒单位)</param>
+            <param name="randomLength">随机数长度</param>
+            <returns>long</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:QJW.Tools.TimestampStyle" -->
+        <member name="F:QJW.Tools.TimestampStyle.MillSecondTicks">
+            <summary>
+            时间刻度精度取为1毫秒（此项无意义，因为一般PC机系统时钟只能精确到10毫秒）
+            </summary>
+        </member>
+        <member name="F:QJW.Tools.TimestampStyle.TenMillSecondTicks">
+            <summary>
+            时间刻度精度取为10毫秒，这是一般PC机系统时钟的最小精度单位
+            </summary>
+        </member>
+        <member name="F:QJW.Tools.TimestampStyle.HundredMillSecondTicks">
+            <summary>
+            时间刻度精度取为100毫秒
+            </summary>
+        </member>
+        <member name="F:QJW.Tools.TimestampStyle.SecondTicks">
+            <summary>
+            时间刻度精度取为1秒，即1000毫秒
+            </summary>
+        </member>
+        <member name="F:QJW.Tools.TimestampStyle.FiveSecondTicks">
+            <summary>
+            时间刻度精度取为5秒
+            </summary>
+        </member>
+        <member name="F:QJW.Tools.TimestampStyle.TenSecondTicks">
+            <summary>
+            时间刻度精度取为10秒
+            </summary>
+        </member>
+        <member name="F:QJW.Tools.TimestampStyle.MinutesTicks">
+            <summary>
+            时间刻度精度取为1分种（60秒）
+            </summary>
+        </member>
+        <member name="M:QJW.Tools.IpHelper.GetUserIp">
+            <summary>
+            获得用户IP
+            </summary>
+        </member>
+        <member name="M:QJW.Tools.IpHelper.GetIP">
+            <summary>
+            获得当前页面客户端的IP
+            </summary>
+            <returns>当前页面客户端的IP</returns>
+        </member>
+        <member name="M:QJW.Tools.IpHelper.IsIP(System.String)">
+            <summary>
+            是否为ip
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Tools.IpHelper.GetLocalIP">
+            <summary>
+            获取本地机器IP地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Tools.IpHelper.IPtoNum(System.String)">
             <summary> 
-            Cookie
+            把IP地址转换为数字格式 
+            </summary> 
+            <param name="strIp">IP地址</param> 
+            <returns>数字</returns> 
+        </member>
+        <member name="T:QJW.Tools.Rmb">
+            <summary> 
+            Rmb 的摘要说明。 
             </summary> 
         </member>
-        <member name="P:QJW.Common.HtmlHelper.Encoding">
+        <member name="M:QJW.Tools.Rmb.CmycurD(System.Decimal)">
             <summary> 
-            语言
+            转换人民币大小金额 
             </summary> 
+            <param name="num">金额</param> 
+            <returns>返回大写形式</returns> 
         </member>
-        <member name="M:QJW.Common.HtmlHelper.GetHtml(System.String,System.String,System.Boolean,System.Net.CookieContainer)">
+        <member name="M:QJW.Tools.Rmb.CmycurD(System.String)">
+            <summary> 
+            一个重载，将字符串先转换成数字在调用CmycurD(decimal num) 
+            </summary> 
+            <param name="num">用户输入的金额，字符串形式未转成decimal</param> 
+            <returns></returns> 
+        </member>
+        <member name="T:QJW.Tools.URLHelper">
             <summary>
-            获取HTML
-            </summary>
-            <param name="url">地址</param>
-            <param name="postData">post 提交的字符串</param>
-            <param name="isPost">是否是post</param>
-            <param name="cookieContainer">CookieContainer</param>
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.GetHtml(System.String,System.Net.CookieContainer)">
-            <summary>
-            获取HTML
-            </summary>
-            <param name="url">地址</param>
-            <param name="cookieContainer">CookieContainer</param>
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.GetStream(System.String,System.Net.CookieContainer)">
-            <param name="url">地址</param>
-            <param name="cookieContainer">cookieContainer</param>
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.NoHTML(System.String)">
-            <summary>   
-            清除HTML标记   
-            </summary>   
-            <param name="NoHTML">包括HTML的源码</param>   
-            <returns>已经去除后的文字</returns>   
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.DelHtmlCode(System.String)">
-            <summary>
-            删除文本中带的HTML标记
-            </summary>
-            <param name="InString">输入要删除带HTML的字符串</param>    
-            <returns>返回处理过的字符串</returns>
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.GetHref(System.String)">
-            <summary>
-            获取页面的链接正则
+            URL的操作类
             </summary>
         </member>
-        <member name="M:QJW.Common.HtmlHelper.GetImgSrc(System.String,System.String)">
+        <member name="M:QJW.Tools.URLHelper.IsBase64(System.String)">
             <summary>
-            匹配页面的图片地址
+            是否是Base64字符串
             </summary>
-            <param name="imgHttp">要补充的http://路径信息</param>
+            <param name="eStr"></param>
+            <returns></returns>
         </member>
-        <member name="M:QJW.Common.HtmlHelper.GetImg(System.String,System.String)">
+        <member name="M:QJW.Tools.URLHelper.UrlEncode(System.String)">
             <summary>
-            匹配<img src="" />中的图片路径实际链接
+            返回 URL 字符串的编码结果
             </summary>
-            <param name="ImgString"><img src="" />字符串</param>
+            <param name="str">字符串</param>
+            <returns>编码结果</returns>
         </member>
-        <member name="M:QJW.Common.HtmlHelper.Get_Http(System.String)">
+        <member name="M:QJW.Tools.URLHelper.UrlDecode(System.String)">
             <summary>
-            以GET方式抓取远程页面内容
+            返回 URL 字符串的解码结果
             </summary>
+            <param name="str">字符串</param>
+            <returns>解码结果</returns>
         </member>
-        <member name="M:QJW.Common.HtmlHelper.Post_Http(System.String,System.String,System.String)">
+        <member name="M:QJW.Tools.URLHelper.AddParam(System.String,System.String,System.String)">
             <summary>
-            以POST方式抓取远程页面内容
-            </summary>
-            <param name="postData">参数列表</param>
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.ZipHtml(System.String)">
-            <summary>
-            压缩HTML输出
+            添加URL参数
             </summary>
         </member>
-        <member name="M:QJW.Common.HtmlHelper.DelHtml(System.String,System.String)">
+        <member name="M:QJW.Tools.URLHelper.UpdateParam(System.String,System.String,System.String)">
             <summary>
-            过滤指定HTML标签
-            </summary>
-            <param name="s_TextStr">要过滤的字符</param>
-            <param name="html_Str">a img p div</param>
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.File(System.String,System.Web.UI.Page)">
-            <summary>
-            加载文件块
+            更新URL参数
             </summary>
         </member>
-        <member name="M:QJW.Common.HtmlHelper.CSS(System.String,System.Web.UI.Page)">
+        <member name="M:QJW.Tools.URLHelper.ParseUrl(System.String,System.String@,System.Collections.Specialized.NameValueCollection@)">
             <summary>
-            加载CSS样式文件
+            分析 url 字符串中的参数信息
             </summary>
+            <param name="url">输入的 URL</param>
+            <param name="baseUrl">输出 URL 的基础部分</param>
+            <param name="nvc">输出分析后得到的 (参数名,参数值) 的集合</param>
         </member>
-        <member name="M:QJW.Common.HtmlHelper.JS(System.String,System.Web.UI.Page)">
-            <summary>
-            加载javascript脚本文件
-            </summary>
+        <member name="M:QJW.Tools.URLHelper.autoConvertToURL(System.Object)">
+            <summary> 
+            自动识别文本中的URL 
+            可以识别 www.，http://， ftp://， xx@xx.xx， mms:// 
+            </summary> 
+            <param name="input">输入数据</param> 
+            <returns>自动识别URL后的数据</returns> 
         </member>
-        <member name="M:QJW.Common.HtmlHelper.alert(System.String,System.String)">
+        <member name="M:QJW.LoginUser.BuildUser(System.String)">
             <summary>
-            弹出警告信息并跳转到指定页面地址
+            从cookie读取用户信息
             </summary>
-            <param name="str">警告信息内容</param>
-            <param name="url">指定要跳转的页面地址</param>
+            <param name="cookieName"></param>
         </member>
-        <member name="M:QJW.Common.HtmlHelper.erro(System.String)">
+        <member name="M:QJW.LoginUser.Logout(System.String)">
             <summary>
-            弹出信息 无跳转动作
+            退出cookie登录
             </summary>
-            <param name="str">信息内容</param>
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.goback">
-            <summary>
-            后退一页
-            </summary>
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.DoJsFunction(System.String)">
-            <summary>
-            执行js命令
-            </summary>
-            <param name="function">传入要执行的js函数[包含参数的函数]</param>
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.Decode(System.String)">
-            <summary>
-            解码得到url值
-            </summary>
-            <param name="str">string</param>
-            <returns>string</returns>
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.Encode(System.String)">
-            <summary>
-            编码传入url
-            </summary>
-            <param name="str">string</param>
-            <returns>string</returns>
-        </member>
-        <member name="M:QJW.Common.HtmlHelper.IsEmpty(System.String,System.String)">
-            <summary>
-            判断输入是否为空 并弹出错误信息
-            </summary>
-            <param name="str">验证内容</param>
-            <param name="erroStr">错误提示内容</param>
-            <returns>bool</returns>
         </member>
     </members>
 </doc>
