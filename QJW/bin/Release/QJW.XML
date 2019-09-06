@@ -163,6 +163,114 @@
             <param name="filePath">文件详细路径</param>
             <returns></returns>
         </member>
+        <member name="T:QJW.Common.FTPHelper">
+            <summary>
+            ftp文件上传、下载操作类
+            </summary>
+        </member>
+        <member name="F:QJW.Common.FTPHelper.ftpUser">
+            <summary>
+            ftp用户名，匿名为“”
+            </summary>
+        </member>
+        <member name="F:QJW.Common.FTPHelper.ftpPassWord">
+            <summary>
+            ftp用户密码，匿名为“”
+            </summary>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.#ctor(System.String,System.String)">
+             <summary>
+            通过用户名，密码连接到FTP服务器
+             </summary>
+             <param name="ftpUser">ftp用户名，匿名为“”</param>
+             <param name="ftpPassWord">ftp登陆密码，匿名为“”</param>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.#ctor">
+            <summary>
+            匿名访问
+            </summary>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.UpLoadFile(System.String,System.String)">
+            <summary>
+            上传文件到Ftp服务器
+            </summary>
+            <param name="UpLoadUri">把上传的文件保存为ftp服务器文件的uri,如"ftp://192.168.1.104/capture-212.avi"</param>
+            <param name="upLoadFile">要上传的本地的文件路径，如D:\capture-2.avi</param>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.DownLoadFile(System.String,System.String)">
+            <summary>
+            从ftp下载文件到本地服务器
+            </summary>
+            <param name="downloadUrl">要下载的ftp文件路径，如ftp://192.168.1.104/capture-2.avi</param>
+            <param name="saveFileUrl">本地保存文件的路径，如(@"d:\capture-22.avi"</param>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.BreakPointDownLoadFile(System.String,System.String)">
+            <summary>
+            从FTP下载文件到本地服务器,支持断点下载
+            </summary>
+            <param name="ftpUri">ftp文件路径，如"ftp://localhost/test.txt"</param>
+            <param name="saveFile">保存文件的路径，如C:\\test.txt</param>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.ListFilesAndDirectories(System.String)">
+            <summary>
+            列出FTP服务器上面当前目录的所有文件和目录
+            </summary>
+            <param name="ftpUri">FTP目录</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.ListFiles(System.String)">
+            <summary>
+            列出FTP目录下的所有文件
+            </summary>
+            <param name="ftpUri">FTP目录</param>
+            <returns></returns>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.ListDirectories(System.String)">
+            <summary>
+            列出FTP目录下的所有目录
+            </summary>
+            <param name="ftpUri">FRTP目录</param>
+            <returns>目录列表</returns>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.GetList(System.String)">
+            <summary>
+            获得文件和目录列表
+            </summary>
+            <param name="datastring">FTP返回的列表字符信息</param>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.ParseFileStructFromUnixStyleRecord(System.String)">
+            <summary>
+            从Unix格式中返回文件信息
+            </summary>
+            <param name="Record">文件信息</param>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.ParseFileStructFromWindowsStyleRecord(System.String)">
+            <summary>
+            从Windows格式中返回文件信息
+            </summary>
+            <param name="Record">文件信息</param>
+        </member>
+        <member name="M:QJW.Common.FTPHelper._cutSubstringFromStringWithTrim(System.String@,System.Char,System.Int32)">
+            <summary>
+            按照一定的规则进行字符串截取
+            </summary>
+            <param name="s">截取的字符串</param>
+            <param name="c">查找的字符</param>
+            <param name="startIndex">查找的位置</param>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.GuessFileListStyle(System.String[])">
+            <summary>
+            判断文件列表的方式Window方式还是Unix方式
+            </summary>
+            <param name="recordList">文件信息列表</param>
+        </member>
+        <member name="M:QJW.Common.FTPHelper.DownFtpDir(System.String,System.String)">
+            <summary>  
+            从FTP下载整个文件夹  
+            </summary>  
+            <param name="ftpDir">FTP文件夹路径</param>  
+            <param name="saveDir">保存的本地文件夹路径</param>  
+        </member>
         <member name="T:QJW.Common.HtmlHelper">
             <summary>
             Html操作相关类

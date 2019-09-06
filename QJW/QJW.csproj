@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Common\Cookie\CookieHelper.cs" />
     <Compile Include="Common\File\FileHelper.cs" />
+    <Compile Include="Common\FTP\FTPHelper.cs" />
     <Compile Include="Common\Html\HtmlHelper.cs" />
     <Compile Include="Common\Image\ImageHelper.cs" />
     <Compile Include="Common\Net\IpHelper.cs" />
